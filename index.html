@@ -1,156 +1,267 @@
 <!DOCTYPE html>
-<html lang="ar" dir="rtl">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>نموذج تسجيل دخول - عبدالولي المشرقي</title>
+    <title>CV | Abdulwali Al-Mashraqi - Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 40px;
-            background-color: #f4f4f4;
-            direction: rtl;
-        }
-
-        h1 {
-            text-decoration: underline;
-            color: #333;
-            text-align: right;
-        }
-
-        h3 {
-            color: #555;
-            text-align: right;
-        }
-        
-        /* 1. تنسيق الجدول الأساسي ليلبي طلبك */
-        .form-table {
-            width: 500px; /* تحديد عرض ثابت أو نسبي للجدول */
-            border-collapse: collapse;
-            /* طلبك: table بدون border */
-            border: none; 
-            margin-top: 20px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* لإضافة تجسيم خفيف بدون حدود */
-            background-color: #ffffff;
-        }
-
-        .form-table td {
-            padding: 8px;
-            /* طلبك: table بدون border - لذا نجعله شفافاً */
-            border: 1px solid transparent; 
-        }
-
-        /* 2. تطبيق تقسيم الأعمدة 25% و 75% */
-        .label-cell {
-            width: 25%; /* العمود الأول 25% */
-            text-align: right;
-            font-weight: bold;
-            color: #1a2a47;
-            padding-left: 10px;
-        }
-
-        .input-cell {
-            width: 75%; /* العمود الثاني 75% */
-        }
-        
-        /* تنسيقات الألوان كما في النموذج الثاني */
-        .input-cell input[type="text"],
-        .input-cell input[type="password"],
-        .input-cell input[type="email"],
-        .input-cell input[type="tel"] {
-            width: 95%;
-            padding: 6px;
-            border: 1px solid #aaa;
-        }
-        
-        .row-green {
-            background-color: #558B2F; /* لون أخضر داكن للهوايات */
-            color: white;
-        }
-
-        .row-blue {
-            background-color: #318CE7; /* لون أزرق للمؤهل */
-            color: white;
-        }
-
-        .row-light {
-            background-color: silver;
-        }
-        
-        /* تنسيق الأزرار الدائرية والمربعات */
-        .options-container label {
-            margin-left: 10px;
-        }
-        
-        .submit-btn-cell {
-            text-align: left;
-            padding-top: 15px;
-        }
+        /* (CSS code will be placed here) */
     </style>
 </head>
 <body>
-    
-    <h1>عبدالولي علي عبدالله مقبل المشرقي</h1>
-    <h3>الرجاء ملء النموذج التالي للدخول الى بيانات عبدالولي علي عبدالله مقبل المشرقي:</h3>
-    
-    <form action="#" method="POST">
-        <table class="form-table">
-            <tbody>
-                <tr>
-                    <td class="label-cell">الاسم:</td>
-                    <td class="input-cell"><input type="text" placeholder="Name"></td>
-                </tr>
-                
-                <tr>
-                    <td class="label-cell">كلمة المرور:</td>
-                    <td class="input-cell"><input type="password" placeholder="password"></td>
-                </tr>
-                
-                <tr>
-                    <td class="label-cell">Email:</td>
-                    <td class="input-cell"><input type="email" placeholder="email"></td>
-                </tr>
-                
-                <tr>
-                    <td class="label-cell">رقم الهاتف:</td>
-                    <td class="input-cell"><input type="tel" placeholder="Tel"></td>
-                </tr>
 
-                <tr class="row-light">
-                    <td class="label-cell">الجنس:</td>
-                    <td class="input-cell options-container">
-                        <label>Male</label><input type="radio" value="Male" name="gender">
-                        <label>Female</label><input type="radio" value="Female" name="gender">
-                    </td>
-                </tr>
-                
-                <tr class="row-green">
-                    <td class="label-cell">الهوايات:</td>
-                    <td class="input-cell">
-                        <input type="checkbox" id="db_protect"><label for="db_protect">حماية قواعد بيانات</label><br>
-                        <input type="checkbox" id="prog_train"><label for="prog_train">تدريب دورات برمجيات</label>
-                    </td>
-                </tr>
+    <div class="container">
+        
+        <aside class="sidebar">
+            <div class="profile-header">
+                <div class="profile-photo"></div>
+                <h1>ABDULWALI ALI ABDULLAH MOQBEL AL-MASHRAQI</h1>
+                <p class="title">Full Stack Developer & Cybersecurity Enthusiast</p>
+            </div>
 
-                <tr class="row-blue">
-                    <td class="label-cell">المؤهل:</td>
-                    <td class="input-cell">
-                         <select style="width: 100%; padding: 5px;">
-                            <option>حماية شبكات</option>
-                            <option>برمجة ويب</option>
-                            <option>أمن معلومات</option>
-                         </select>
-                    </td>
-                </tr>
+            <section class="contact">
+                <h3>CONTACT</h3>
+                <ul>
+                    <li><i class="icon fas fa-envelope"></i> example@domain.com</li>
+                    <li><i class="icon fas fa-phone"></i> +967 77xxxxxxx</li>
+                    <li><i class="icon fas fa-map-marker-alt"></i> Sana'a, Yemen</li>
+                    <li><i class="icon fab fa-linkedin"></i> /Abdulwali-Mashraqi</li>
+                </ul>
+            </section>
+
+            <section class="skills">
+                <h3>SKILLS</h3>
+                <div class="skill-bar">
+                    <h4>HTML/CSS</h4>
+                    <div class="bar-container"><div class="bar-fill" style="width: 95%;"></div></div>
+                </div>
+                <div class="skill-bar">
+                    <h4>JavaScript (React)</h4>
+                    <div class="bar-container"><div class="bar-fill" style="width: 80%;"></div></div>
+                </div>
+                <div class="skill-bar">
+                    <h4>Python (Django)</h4>
+                    <div class="bar-container"><div class="bar-fill" style="width: 75%;"></div></div>
+                </div>
+                <div class="skill-bar">
+                    <h4>Database (SQL)</h4>
+                    <div class="bar-container"><div class="bar-fill" style="width: 88%;"></div></div>
+                </div>
+            </section>
+        </aside>
+
+        <main class="content">
+
+            <section class="summary">
+                <h2>PROFILE SUMMARY</h2>
+                <p>Highly motivated and results-driven professional with a strong background in software development and network security. Proven ability to design and deploy robust, scalable solutions and a commitment to continuous learning in dynamic technological environments.</p>
+            </section>
+            
+            <section class="experience">
+                <h2>PROFESSIONAL EXPERIENCE</h2>
+
+                <div class="timeline-item">
+                    <div class="job-title">Senior Web Developer</div>
+                    <div class="company-date">Tech Solutions Co. | 2021 – Present</div>
+                    <ul>
+                        <li>Led the development of 3 major e-commerce platforms using React and Node.js.</li>
+                        <li>Implemented robust security protocols, reducing system vulnerabilities by 40%.</li>
+                    </ul>
+                </div>
                 
-                <tr>
-                    <td colspan="2" class="submit-btn-cell">
-                        <button type="submit">click here</button>
-                    </td>
-                </tr>
-            </tbody>
-        </table>
-    </form>
+                <div class="timeline-item">
+                    <div class="job-title">Junior Software Engineer</div>
+                    <div class="company-date">Innovation Labs | 2019 – 2021</div>
+                    <ul>
+                        <li>Developed and maintained internal APIs and databases.</li>
+                        <li>Contributed to code reviews and deployed weekly feature updates.</li>
+                    </ul>
+                </div>
+            </section>
+            
+            <section class="education">
+                <h2>EDUCATION</h2>
+
+                <div class="timeline-item">
+                    <div class="job-title">M.Sc. Computer Science</div>
+                    <div class="company-date">University of Technology | 2018</div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="job-title">B.Sc. Information Technology</div>
+                    <div class="company-date">Sana'a University | 2014</div>
+                </div>
+            </section>
+            
+        </main>
+        
+    </div>
     
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </body>
 </html>
+<style>
+    /* 1. الإعدادات الأساسية والثيم الداكن (Dark Theme) */
+    :root {
+        --primary-color: #00bcd4; /* أزرق سماوي للتأكيد */
+        --dark-bg: #1e1e1e; /* خلفية داكنة جداً */
+        --mid-bg: #2d2d2d; /* خلفية متوسطة */
+        --light-text: #f0f0f0; /* نص فاتح */
+        --secondary-text: #b0b0b0; /* نص ثانوي رمادي */
+    }
+
+    body {
+        font-family: 'Montserrat', sans-serif;
+        background-color: var(--dark-bg);
+        color: var(--light-text);
+        margin: 0;
+        padding: 0;
+        line-height: 1.6;
+    }
+
+    /* 2. تطبيق Grid على الحاوية الرئيسية */
+    .container {
+        max-width: 1000px;
+        margin: 50px auto;
+        display: grid;
+        /* تقسيم الصفحة إلى عمودين: 30% للشريط الجانبي و 70% للمحتوى */
+        grid-template-columns: 30% 70%; 
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+        border-radius: 10px;
+        overflow: hidden; /* لحصر الظل والحواف */
+    }
+
+    /* 3. تنسيق شريط الجانب (العمود الأيسر) */
+    .sidebar {
+        background-color: var(--mid-bg);
+        padding: 30px 20px;
+        color: white;
+        text-align: center;
+        border-right: 5px solid var(--primary-color);
+    }
+    .profile-header h1 {
+        font-size: 1.8em;
+        margin-bottom: 5px;
+        color: var(--primary-color);
+    }
+    .profile-header .title {
+        font-size: 0.9em;
+        color: var(--secondary-text);
+        margin-bottom: 25px;
+        font-weight: 600;
+    }
+    .profile-photo {
+        width: 100px;
+        height: 100px;
+        background-color: #555; /* Placeholder for a photo */
+        border-radius: 50%;
+        margin: 0 auto 15px;
+        border: 4px solid var(--primary-color);
+    }
+
+    /* 4. تنسيق قسم الاتصال والمهارات */
+    .sidebar h3 {
+        color: var(--primary-color);
+        border-bottom: 2px solid var(--primary-color);
+        padding-bottom: 5px;
+        margin-top: 25px;
+        margin-bottom: 15px;
+        font-size: 1.1em;
+        text-transform: uppercase;
+    }
+    .contact ul {
+        list-style: none;
+        padding: 0;
+        font-size: 0.9em;
+    }
+    .contact li {
+        margin-bottom: 10px;
+        text-align: left;
+    }
+    .contact li .icon {
+        margin-right: 10px;
+        color: var(--primary-color);
+    }
+
+    /* 5. تنسيق شريط المهارات (Skills Bars) */
+    .skill-bar {
+        margin-bottom: 15px;
+        text-align: left;
+    }
+    .skill-bar h4 {
+        margin: 0 0 5px 0;
+        font-size: 0.85em;
+        color: var(--secondary-text);
+    }
+    .bar-container {
+        background: #555;
+        border-radius: 5px;
+        height: 8px;
+        overflow: hidden;
+    }
+    .bar-fill {
+        height: 100%;
+        background-color: var(--primary-color);
+        transition: width 1s ease-out; /* حركة لملء الشريط */
+    }
+
+    /* 6. تنسيق المحتوى الرئيسي */
+    .content {
+        background-color: var(--dark-bg);
+        padding: 30px;
+    }
+    .content h2 {
+        color: var(--primary-color);
+        border-bottom: 1px solid #3a3a3a;
+        padding-bottom: 10px;
+        margin-bottom: 20px;
+        font-size: 1.5em;
+        font-weight: 700;
+    }
+    .summary p {
+        color: var(--secondary-text);
+        font-size: 0.95em;
+    }
+
+    /* 7. تنسيق أقسام الخبرة والتعليم (Timeline Style) */
+    .timeline-item {
+        margin-bottom: 25px;
+        border-left: 3px solid var(--primary-color); /* خط زمني */
+        padding-left: 15px;
+        position: relative;
+    }
+    .job-title {
+        font-weight: 700;
+        font-size: 1.1em;
+        color: var(--light-text);
+        margin-bottom: 2px;
+    }
+    .company-date {
+        font-size: 0.9em;
+        color: var(--secondary-text);
+        margin-bottom: 10px;
+        font-style: italic;
+    }
+    .timeline-item ul {
+        list-style-type: disc;
+        padding-right: 20px;
+        color: var(--secondary-text);
+        font-size: 0.9em;
+    }
+
+    /* 8. الاستجابة (Responsive Design) */
+    @media (max-width: 800px) {
+        .container {
+            grid-template-columns: 1fr; /* تحويل العرض إلى عمود واحد */
+            margin: 20px;
+        }
+        .sidebar {
+            border-right: none;
+            border-bottom: 5px solid var(--primary-color);
+        }
+        .contact li {
+            text-align: center;
+        }
+    }
+</style>
