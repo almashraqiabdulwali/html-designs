@@ -8,48 +8,45 @@
         /* التنسيق الأساسي للجسم والخلفية */
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: #eef2f5; /* خلفية فاتحة جداً لإظهار الظل */
+            background-color: #eef2f5;
             margin: 0;
             padding: 20px;
             direction: rtl;
         }
         
-        /* الحاوية الرئيسية - مظهر ثلاثي الأبعاد */
+        /* الحاوية الرئيسية - تم تقليل العرض الأقصى */
         .container {
-            max-width: 800px;
-            margin: 40px auto; /* زيادة الهامش لإظهار الجسم */
-            padding: 30px;
+            max-width: 700px; /* تم التصغير من 800px */
+            margin: 40px auto; 
+            padding: 25px; /* تم التصغير من 30px */
             background-color: #ffffff;
             border-radius: 20px;
-            /* ظل قوي لرفع الصندوق عن الخلفية */
             box-shadow: 0 10px 20px rgba(0, 0, 0, 0.25), 0 0 0 1px rgba(0, 0, 0, 0.05); 
         }
         
         header { text-align: center; margin-bottom: 25px; }
         .highlight { color: #007bff; text-decoration: underline; }
 
-        /* 1. تنسيق الجدول وإضافة حدود ملونة ومجسَّمة */
+        /* تنسيق الجدول وإضافة حدود ملونة ومجسَّمة */
         .form-table {
             width: 100%;
             border-collapse: collapse; 
             margin-top: 25px;
-            /* حدود الجدول الرئيسية (إطار خارجي سميك) */
             border: 4px solid #007bff; 
             border-radius: 10px; 
-            overflow: hidden; /* لإخفاء الحدود الزائدة داخل الأركان الدائرية */
+            overflow: hidden;
         }
         
-        /* 2. تنسيق خلايا الجدول والخطوط الداخلية */
+        /* تنسيق خلايا الجدول والخطوط الداخلية - تم تقليل الحشوة */
         .form-table td {
-            padding: 12px 15px;
-            /* حدود داخلية مجسَّمة وبلون خفيف */
+            padding: 10px 12px; /* تم التصغير من 12px 15px */
             border: 1px solid #cce0ff; 
             background-color: #ffffff;
             vertical-align: top;
             transition: background-color 0.3s;
         }
         .form-table tr:hover td {
-            background-color: #f0f7ff; /* تمييز الصف عند المرور بالماوس */
+            background-color: #f0f7ff;
         }
         
         /* تلوين خطوط الجدول بالتناوب */
@@ -62,16 +59,16 @@
             width: 30%; 
             font-weight: 700;
             color: #1a2a47;
-            background-color: #e6f0ff; /* خلفية مميزة للتسميات */
+            background-color: #e6f0ff;
             text-align: right;
-            border-left: 3px solid #007bff; /* خط عمودي بارز يفصل التسمية عن الحقل */
+            border-left: 3px solid #007bff;
         }
 
         /* تنسيق الحقول والمجموعات المدمجة */
         input:not([type="radio"]), 
         select {
             width: 98%;
-            padding: 10px;
+            padding: 9px; /* تم التصغير من 10px */
             border: 1px solid #ddd;
             border-radius: 6px;
             box-sizing: border-box;
@@ -107,11 +104,11 @@
             box-shadow: 0 6px 12px rgba(0, 123, 255, 0.6);
         }
         
-        /* استجابة الشاشات الصغيرة (لتحسين تجربة الجدول على الهاتف) */
+        /* استجابة الشاشات الصغيرة */
         @media (max-width: 600px) {
-            .container { padding: 15px; }
+            .container { max-width: 100%; padding: 10px; }
             .form-table, .form-table tbody, .form-table tr, .form-table td {
-                display: block; /* جعل العناصر قابلة للتراص عمودياً */
+                display: block; 
                 width: 100%;
             }
             .form-table tr {
@@ -130,9 +127,6 @@
                 flex-direction: column; 
                 gap: 5px;
             }
-            .input-inline-group > div {
-                width: 100%;
-            }
             .submit-cell {
                 padding-top: 10px;
             }
@@ -143,8 +137,8 @@
     
     <div class="container">
         <header>
-            <h1><span class="highlight">محمد</span> عبد الله قائد علي عبده <span class="highlight">الولي</span></h1>
-            <h3>للدخول إلى بيانات محمد عبد الله قائد علي عبده الولي، الرجاء ملء النموذج التالي:</h3>
+            <h1><span class="highlight">عبدالولي</span> علي عبدالله مقبل <span class="highlight">المشرقي</span></h1>
+            <h3>للدخول إلى بيانات عبدالولي علي عبدالله مقبل المشرقي، الرجاء ملء النموذج التالي:</h3>
         </header>
         
         <form action="#" method="POST">
