@@ -1,11 +1,267 @@
 <!DOCTYPE html>
-<html lang="ar">
+<html lang="ar" dir="rtl">
 <head>
-  <meta charset="UTF-8">
-  <title>صفحتي الشخصية</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="NourBook" content="معلومات طبية">
+    <title>نموذج تسجيل مُفصَّل - NourBook</title>
+    <style>
+        /* (CSS code will go here, see section 2) */
+    </style>
 </head>
 <body>
-  <h1>مرحباً! أنا عبد الولي</h1>
-  <p>هذا أول مشروع HTML أرفعه على GitHub.</p>
+    
+    <div class="container">
+        <header>
+            <h1><span class="highlight">محمد</span>عبدالولي علي عبدالله مقبل المشرقي<span class=
+"highlight">الولي</span></h1>
+            <h3>  عبدالولي علي عبدالله مقبل المشرقي، الرجاء ملء النموذج التالي:</h3>
+        </header>
+        
+        <form class="modern-form" action="#" method="POST">
+            
+            <h4 class="section-title">بيانات الدخول والاتصال</h4>
+
+            <div class="form-group">
+                <label for="name">الاسم:</label>
+                <input type="text" id="name" name="name" placeholder="الاسم كاملاً" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="password">كلمة المرور:</label>
+                <input type="password" id="password" name="password" placeholder="كلمة المرور" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="email">البريد الإلكتروني (Email):</label>
+                <input type="email" id="email" name="email" placeholder="example@domain.com" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="tel">رقم الهاتف:</label>
+                <input type="tel" id="tel" name="tel" placeholder="رقم الهاتف" required>
+            </div>
+            
+            <h4 class="section-title">البيانات المهنية والأكاديمية</h4>
+
+            <div class="form-group multi-group">
+                <div class="field-item">
+                    <label for="qualification">المؤهل العام:</label>
+                    <select id="qualification" name="qualification" required>
+                        <option value="" disabled selected>اختر المؤهل...</option>
+                        <option value="fighter_pilot">طيار مقاتل</option>
+                        <option value="civil_pilot">طيار مدني</option>
+                        <option value="helicopter_pilot">طيار مروحية</option>
+                        <option value="other">أخرى</option>
+                    </select>
+                </div>
+                <div class="field-item">
+                    <label for="specialization">التخصص الدقيق:</label>
+                    <input type="text" id="specialization" name="specialization" placeholder="مثال: هندسة الطيران، الأمن السيبراني" required>
+                </div>
+            </div>
+
+            <div class="form-group multi-group">
+                <div class="field-item">
+                    <label for="profession">المهنة الحالية:</label>
+                    <input type="text" id="profession" name="profession" placeholder="مثال: مهندس، طالب، موظف حكومي" required>
+                </div>
+                <div class="field-item checkbox-group-inline">
+                    <label class="group-label">الهوايات الرئيسية:</label>
+                    <div class="options-container">
+                        <input type="checkbox" id="all_above" name="hobby_all">
+                        <label for="all_above">كل ما سبق</label>
+                        <input type="checkbox" id="bodybuilding" name="hobby_build">
+                        <label for="bodybuilding">بناء العضلات</label>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="form-group radio-group">
+                <label class="group-label">الجنس:</label>
+                <div class="options-container">
+                    <input type="radio" id="male" value="Male" name="gender" required>
+                    <label for="male">ذكر (Male)</label>
+                    <input type="radio" id="female" value="Female" name="gender">
+                    <label for="female">أنثى (Female)</label>
+                </div>
+            </div>
+
+            <button type="submit" class="submit-btn">تسجيل الدخول / إرسال البيانات</button>
+        </form>
+    </div>
+
 </body>
 </html>
+<style>
+    /* الإعدادات الأساسية (كما هي) */
+    body {
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        background-color: #f4f7f6;
+        margin: 0;
+        padding: 20px;
+        direction: rtl;
+    }
+    .container {
+        max-width: 800px; /* زيادة العرض لاستيعاب الحقول الجديدة */
+        margin: 30px auto;
+        padding: 30px;
+        background-color: #ffffff;
+        border-radius: 15px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    }
+    header { text-align: center; margin-bottom: 25px; }
+    h1 { color: #1a2a47; font-size: 1.8em; }
+    .highlight { color: #007bff; text-decoration: underline; }
+
+    /* عنوان القسم الجديد */
+    .section-title {
+        color: #007bff;
+        font-size: 1.2em;
+        font-weight: 700;
+        margin-top: 30px;
+        margin-bottom: 15px;
+        border-bottom: 2px solid #cce0ff;
+        padding-bottom: 5px;
+    }
+
+    /* تطبيق Flexbox على كل مجموعة حقول عادية (كما هي) */
+    .form-group {
+        display: flex; 
+        align-items: center;
+        margin-bottom: 18px;
+        padding: 10px;
+        border-radius: 8px;
+        background-color: #f9f9f9; 
+        border: 1px solid #eee;
+    }
+
+    /* ** التنسيق الخاص بالصفوف المدمجة (Multi-Group) ** */
+    .form-group.multi-group {
+        display: grid; /* نستخدم Grid هنا لتقسيم الصف إلى عمودين متجاورين */
+        grid-template-columns: 1fr 1fr; /* كل عمود يأخذ نفس المساحة */
+        gap: 15px;
+        background-color: #e6f0ff; /* تمييز هذا الصف بلون مختلف */
+    }
+
+    .field-item {
+        /* داخل كل عمود (field-item) نستخدم Flex مرة أخرى لترتيب التسمية والحقل */
+        display: flex;
+        flex-direction: column; /* التسمية فوق الحقل */
+        gap: 5px;
+    }
+    
+    .field-item label {
+        flex: initial; /* إلغاء خاصية flex القديمة */
+        text-align: right;
+        padding-left: 0;
+    }
+
+    /* تنسيق التسميات */
+    label {
+        flex: 0 0 30%; 
+        font-weight: 600;
+        color: #333;
+        padding-left: 10px;
+    }
+    .group-label {
+        flex: 0 0 30%;
+    }
+
+    /* تنسيق حقول الإدخال */
+    input[type="text"], 
+    input[type="password"], 
+    input[type="email"], 
+    input[type="tel"],
+    select {
+        flex: 1; 
+        width: 100%; /* يجب أن يأخذ العرض كاملاً داخل الـ field-item */
+        padding: 12px;
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        box-sizing: border-box;
+        transition: border-color 0.3s;
+    }
+
+    input:focus, select:focus {
+        border-color: #007bff;
+        box-shadow: 0 0 5px rgba(0, 123, 255, 0.3);
+        outline: none;
+    }
+
+    /* تنسيق مجموعات الـ Radio و الـ Checkbox */
+    .radio-group, .checkbox-group-inline {
+        background-color: #e6f0ff;
+        border-color: #cce0ff;
+        /* في حال استخدام الـ checkbox/radio في صف منفصل */
+        display: flex; 
+        align-items: center;
+    }
+    .checkbox-group-inline .group-label { /* لتمييز تسمية مجموعة الهوايات */
+        flex: 0 0 35%; 
+    }
+    .options-container {
+        flex: 1;
+        display: flex;
+        gap: 15px;
+        align-items: center;
+    }
+
+    /* تنسيق زر الإرسال (كما هو) */
+    .submit-btn {
+        width: 100%;
+        padding: 15px;
+        margin-top: 25px;
+        background-color: #007bff;
+        color: white;
+        border: none;
+        border-radius: 10px;
+        font-size: 1.1em;
+        font-weight: 600;
+        cursor: pointer;
+        transition: background-color 0.3s, transform 0.2s;
+        box-shadow: 0 4px 8px rgba(0, 123, 255, 0.4);
+    }
+    .submit-btn:hover {
+        background-color: #0056b3;
+        transform: translateY(-2px);
+    }
+    
+    /* تحسين الاستجابة (Responsive) */
+    @media (max-width: 768px) {
+        /* تحويل الصفوف المدمجة إلى عمودي على الشاشات الأصغر */
+        .form-group.multi-group {
+            grid-template-columns: 1fr; 
+        }
+        .field-item {
+            flex-direction: row; /* إعادة التسمية والحقل إلى صف أفقي */
+            align-items: center;
+        }
+        .field-item label {
+            width: 30%; /* التسمية تأخذ 30% */
+            margin-bottom: 0;
+            text-align: right;
+        }
+        .field-item input, .field-item select {
+            width: 70%; /* الحقل يأخذ 70% */
+        }
+        
+        /* التنسيق العام (أفقي -> عمودي) */
+        .form-group:not(.multi-group) {
+            flex-direction: column; 
+            align-items: flex-start;
+        }
+        .form-group:not(.multi-group) label {
+            width: 100%;
+            margin-bottom: 5px;
+        }
+        .form-group:not(.multi-group) input, 
+        .form-group:not(.multi-group) select {
+            width: 100%;
+        }
+        .options-container {
+            width: 100%;
+            justify-content: flex-start;
+        }
+    }
+</style>
