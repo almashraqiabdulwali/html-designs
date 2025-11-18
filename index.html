@@ -3,207 +3,154 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>نموذج تسجيل - جدول مُصغَّر ونظيف</title>
+    <title>نموذج تسجيل دخول - عبدالولي المشرقي</title>
     <style>
-        /* التنسيق الأساسي للجسم والخلفية */
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: #eef2f5;
-            margin: 0;
-            padding: 20px;
+            font-family: Arial, sans-serif;
+            margin: 40px;
+            background-color: #f4f4f4;
             direction: rtl;
         }
-        
-        /* الحاوية الرئيسية - تم تقليل العرض الأقصى مجدداً */
-        .container {
-            max-width: 650px; /* تم التصغير من 700px */
-            margin: 30px auto; 
-            padding: 20px; /* تم التصغير من 25px */
-            background-color: #ffffff;
-            border-radius: 18px; /* حواف أنعم */
-            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.15), 0 0 0 1px rgba(0, 0, 0, 0.05); 
-        }
-        
-        header { text-align: center; margin-bottom: 20px; }
-        .highlight { color: #007bff; text-decoration: underline; }
 
-        /* تنسيق الجدول وإضافة حدود ملونة ومجسَّمة */
-        .form-table {
-            width: 100%;
-            border-collapse: collapse; 
-            margin-top: 15px;
-            /* حدود الجدول الرئيسية (إطار خارجي رفيع) */
-            border: 2px solid #007bff; 
-            border-radius: 8px; 
-            overflow: hidden;
-        }
-        
-        /* تنسيق خلايا الجدول والخطوط الداخلية - تم تقليل الحشوة */
-        .form-table td {
-            padding: 8px 10px; /* تم التصغير مجدداً */
-            border: 1px solid #dce8f5; /* خطوط أفتح وأكثر نظافة */
-            background-color: #ffffff;
-            vertical-align: middle; /* محاذاة في المنتصف عمودياً */
-            transition: background-color 0.3s;
-        }
-        .form-table tr:hover td {
-            background-color: #f5faff; /* لون فاتح جداً عند المرور */
-        }
-        
-        /* تلوين خطوط الجدول بالتناوب */
-        .form-table tr:nth-child(even) td {
-            background-color: #fcfcfc;
-        }
-        
-        /* تنسيق عمود التسمية */
-        .label-cell {
-            width: 35%; /* زيادة عرض التسمية قليلاً لتناسب الاسم الجديد */
-            font-weight: 600;
+        h1 {
+            text-decoration: underline;
             color: #333;
-            background-color: #eef3f9; /* خلفية ناعمة للتسميات */
             text-align: right;
-            border-left: 2px solid #b3d9ff; /* خط عمودي ناعم */
         }
 
-        /* تنسيق الحقول والمجموعات المدمجة */
-        input:not([type="radio"]), 
-        select {
-            width: 98%;
-            padding: 7px; /* تم التصغير */
-            border: 1px solid #ddd;
-            border-radius: 5px;
-            box-sizing: border-box;
-        }
-
-        .input-inline-group {
-            display: flex;
-            gap: 10px; /* تقليل المسافة */
-            width: 100%;
-        }
-        .input-inline-group > div { flex: 1; }
-        .input-inline-group label { display: block; font-weight: 600; margin-bottom: 3px; font-size: 0.9em; }
-
-        /* تنسيق زر الإرسال */
-        .submit-cell {
-            text-align: center;
-            padding: 15px; /* تقليل الحشوة */
-            background-color: #fff !important; 
-        }
-        .submit-btn {
-            padding: 10px 30px; /* تصغير الزر */
-            background-color: #007bff;
-            color: white;
-            border: none;
-            border-radius: 6px;
-            font-weight: 600;
-            cursor: pointer;
-            box-shadow: 0 3px 5px rgba(0, 123, 255, 0.3);
-            transition: all 0.2s;
+        h3 {
+            color: #555;
+            text-align: right;
         }
         
-        /* استجابة الشاشات الصغيرة */
-        @media (max-width: 600px) {
-            .container { max-width: 100%; padding: 10px; }
-            .form-table, .form-table tbody, .form-table tr, .form-table td {
-                display: block; 
-                width: 100%;
-            }
-            .form-table tr { margin-bottom: 8px; border: 1px solid #ccc; border-radius: 8px; }
-            .label-cell { width: 100%; text-align: left; background-color: #eef2f5; border-left: none; border-bottom: 1px solid #ddd; }
-            .input-inline-group { flex-direction: column; gap: 5px; }
-            .submit-cell { padding-top: 10px; }
+        /* 1. تنسيق الجدول الأساسي ليلبي طلبك */
+        .form-table {
+            width: 500px; /* تحديد عرض ثابت أو نسبي للجدول */
+            border-collapse: collapse;
+            /* طلبك: table بدون border */
+            border: none; 
+            margin-top: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* لإضافة تجسيم خفيف بدون حدود */
+            background-color: #ffffff;
+        }
+
+        .form-table td {
+            padding: 8px;
+            /* طلبك: table بدون border - لذا نجعله شفافاً */
+            border: 1px solid transparent; 
+        }
+
+        /* 2. تطبيق تقسيم الأعمدة 25% و 75% */
+        .label-cell {
+            width: 25%; /* العمود الأول 25% */
+            text-align: right;
+            font-weight: bold;
+            color: #1a2a47;
+            padding-left: 10px;
+        }
+
+        .input-cell {
+            width: 75%; /* العمود الثاني 75% */
+        }
+        
+        /* تنسيقات الألوان كما في النموذج الثاني */
+        .input-cell input[type="text"],
+        .input-cell input[type="password"],
+        .input-cell input[type="email"],
+        .input-cell input[type="tel"] {
+            width: 95%;
+            padding: 6px;
+            border: 1px solid #aaa;
+        }
+        
+        .row-green {
+            background-color: #558B2F; /* لون أخضر داكن للهوايات */
+            color: white;
+        }
+
+        .row-blue {
+            background-color: #318CE7; /* لون أزرق للمؤهل */
+            color: white;
+        }
+
+        .row-light {
+            background-color: silver;
+        }
+        
+        /* تنسيق الأزرار الدائرية والمربعات */
+        .options-container label {
+            margin-left: 10px;
+        }
+        
+        .submit-btn-cell {
+            text-align: left;
+            padding-top: 15px;
         }
     </style>
 </head>
 <body>
     
-    <div class="container">
-        <header>
-            <h1><span class="highlight">عبدالولي</span> علي عبدالله مقبل <span class="highlight">المشرقي</span></h1>
-            <h3>للدخول إلى بيانات عبدالولي علي عبدالله مقبل المشرقي، الرجاء ملء النموذج التالي:</h3>
-        </header>
-        
-        <form action="#" method="POST">
-            
-            <table class="form-table">
-                <tbody>
-                    <tr>
-                        <td class="label-cell">الاسم:</td>
-                        <td><input type="text" name="name" placeholder="الاسم كاملاً" required></td>
-                    </tr>
-                    <tr>
-                        <td class="label-cell">كلمة المرور:</td>
-                        <td><input type="password" name="password" placeholder="كلمة المرور" required></td>
-                    </tr>
-                    <tr>
-                        <td class="label-cell">البريد الإلكتروني:</td>
-                        <td><input type="email" name="email" placeholder="example@domain.com" required></td>
-                    </tr>
-                    <tr>
-                        <td class="label-cell">رقم الهاتف:</td>
-                        <td><input type="tel" name="tel" placeholder="رقم الهاتف" required></td>
-                    </tr>
+    <h1>عبدالولي علي عبدالله مقبل المشرقي</h1>
+    <h3>الرجاء ملء النموذج التالي للدخول الى بيانات عبدالولي علي عبدالله مقبل المشرقي:</h3>
+    
+    <form action="#" method="POST">
+        <table class="form-table">
+            <tbody>
+                <tr>
+                    <td class="label-cell">الاسم:</td>
+                    <td class="input-cell"><input type="text" placeholder="Name"></td>
+                </tr>
+                
+                <tr>
+                    <td class="label-cell">كلمة المرور:</td>
+                    <td class="input-cell"><input type="password" placeholder="password"></td>
+                </tr>
+                
+                <tr>
+                    <td class="label-cell">Email:</td>
+                    <td class="input-cell"><input type="email" placeholder="email"></td>
+                </tr>
+                
+                <tr>
+                    <td class="label-cell">رقم الهاتف:</td>
+                    <td class="input-cell"><input type="tel" placeholder="Tel"></td>
+                </tr>
 
-                    <tr>
-                        <td class="label-cell">المؤهل/التخصص:</td>
-                        <td>
-                            <div class="input-inline-group">
-                                <div>
-                                    <label for="qualification">المؤهل العام:</label>
-                                    <select id="qualification" name="qualification" required>
-                                        <option value="fighter_pilot">طيار مقاتل</option>
-                                        <option value="civil_pilot">طيار مدني</option>
-                                        <option value="other">أخرى</option>
-                                    </select>
-                                </div>
-                                <div>
-                                    <label for="specialization">التخصص الدقيق:</label>
-                                    <input type="text" id="specialization" name="specialization" placeholder="مثال: هندسة الطيران" required>
-                                </div>
-                            </div>
-                        </td>
-                    </tr>
+                <tr class="row-light">
+                    <td class="label-cell">الجنس:</td>
+                    <td class="input-cell options-container">
+                        <label>Male</label><input type="radio" value="Male" name="gender">
+                        <label>Female</label><input type="radio" value="Female" name="gender">
+                    </td>
+                </tr>
+                
+                <tr class="row-green">
+                    <td class="label-cell">الهوايات:</td>
+                    <td class="input-cell">
+                        <input type="checkbox" id="db_protect"><label for="db_protect">حماية قواعد بيانات</label><br>
+                        <input type="checkbox" id="prog_train"><label for="prog_train">تدريب دورات برمجيات</label>
+                    </td>
+                </tr>
 
-                    <tr>
-                        <td class="label-cell">المهنة/الهوايات:</td>
-                        <td>
-                            <div class="input-inline-group">
-                                <div>
-                                    <label for="profession">المهنة الحالية:</label>
-                                    <input type="text" id="profession" name="profession" placeholder="مثال: مهندس" required>
-                                </div>
-                                <div style="display: flex; flex-direction: column; align-items: flex-start;">
-                                    <label>الهوايات:</label>
-                                    <div class="options-container">
-                                        <input type="checkbox" id="all_above" name="hobby_all"><label for="all_above">كل ما سبق</label>
-                                        <input type="checkbox" id="bodybuilding" name="hobby_build"><label for="bodybuilding">بناء العضلات</label>
-                                    </div>
-                                </div>
-                            </div>
-                        </td>
-                    </tr>
-
-                    <tr>
-                        <td class="label-cell">الجنس:</td>
-                        <td>
-                            <div class="options-container">
-                                <input type="radio" id="male" value="Male" name="gender" required><label for="male">ذكر (Male)</label>
-                                <input type="radio" id="female" value="Female" name="gender"><label for="female">أنثى (Female)</label>
-                            </div>
-                        </td>
-                    </tr>
-
-                    <tr>
-                        <td colspan="2" class="submit-cell">
-                            <button type="submit" class="submit-btn">تسجيل الدخول / إرسال البيانات</button>
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
-            
-        </form>
-        
-    </div>
-
+                <tr class="row-blue">
+                    <td class="label-cell">المؤهل:</td>
+                    <td class="input-cell">
+                         <select style="width: 100%; padding: 5px;">
+                            <option>حماية شبكات</option>
+                            <option>برمجة ويب</option>
+                            <option>أمن معلومات</option>
+                         </select>
+                    </td>
+                </tr>
+                
+                <tr>
+                    <td colspan="2" class="submit-btn-cell">
+                        <button type="submit">click here</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </form>
+    
 </body>
 </html>
