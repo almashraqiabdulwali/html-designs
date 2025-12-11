@@ -3,431 +3,457 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mega Registration Dashboard | Abdulwali Al-Mashraqi</title>
-    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap" rel="stylesheet">
+    <title>واجهة ترحيبية</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700&display=swap" rel="stylesheet">
     <style>
-        /* 8. بداية جزء CSS: التنسيق الكامل للصفحة. */
-
-        :root {
-            /* 9. متغيرات CSS (Variables): لتحديد الألوان الرئيسية وإعادة استخدامها. */
-            --p-l: #4c68ff;
-            /* اللون الأساسي الفاتح (Primary Light) */
-            --p-d: #00bcd4;
-            /* اللون الأساسي الداكن/المميز (Primary Dark) */
-            --g-c: rgba(255, 255, 255, .2);
-            /* لون خلفية الزجاج (Glass Color): أبيض بشفافية 20% */
-            --g-b: rgba(255, 255, 255, .3);
-            /* لون حد الزجاج (Glass Border): أبيض بشفافية 30% */
-            --d-t: #1a2a47;
-            /* لون النص الداكن (Dark Text) */
-        }
-
-        body {
-            /* 10. تنسيق الجسم (Body): */
-            font-family: 'Cairo', sans-serif;
-            /* تطبيق خط Cairo. */
+        * {
             margin: 0;
             padding: 0;
+            box-sizing: border-box;
+            font-family: 'Cairo', sans-serif;
+        }
+        
+        body {
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            color: #333;
             min-height: 100vh;
-            /* ضمان ملء الشاشة عمودياً. */
             display: flex;
             justify-content: center;
             align-items: center;
-            /* توسيط المحتوى أفقياً وعمودياً باستخدام Flexbox. */
-            direction: rtl;
-            /* تطبيق اتجاه اليمين لليسار. */
-            overflow-x: hidden;
-            /* منع شريط التمرير الأفقي. */
-            perspective: 1500px
-            /* تحديد منظور 3D لتأثيرات مثل دوران الزر. */
-        }
-
-        .animated-bg {
-            /* 11. الخلفية المتحركة (Animated Background): */
-            position: fixed;
-            /* تثبيت الخلفية في الشاشة. */
-            top: 0;
-            left: 0;
-            width: 200%;
-            height: 200%;
-            /* مضاعفة الحجم للسماح بالحركة السلسة للتدرج اللوني. */
-            background: linear-gradient(135deg, #1f005c, #5b0060, #870160, #ac255e, #ca485c, #e16b5c, #f39060, #ffb568);
-            /* تحديد التدرج اللوني المعقد. */
-            background-size: 400% 400%;
-            /* مضاعفة حجم التدرج أربع مرات. */
-            animation: g-s 30s ease infinite;
-            /* تطبيق حركة g-s (Gradient Shift) لمدة 30 ثانية بشكل لا نهائي. */
-            z-index: -1
-            /* وضع الخلفية خلف جميع العناصر الأخرى. */
-        }
-
-        @keyframes g-s {
-            /* 12. تعريف الحركة g-s: */
-            0% {
-                background-position: 0 50%
-            }
-            /* عند البداية، موضع الخلفية الأفقي 0%. */
-            50% {
-                background-position: 100% 50%
-            }
-            /* في المنتصف، يتحرك الموضع الأفقي إلى 100%. */
-            100% {
-                background-position: 0 50%
-            }
-            /* العودة إلى البداية لاستمرار الحركة (حلقة لا نهائية). */
-        }
-
-        .dash-c {
-            /* 13. حاوية لوحة التحكم الرئيسية (Dashboard Container): */
-            width: 90%;
-            max-width: 1100px;
-            margin: 50px auto;
-            padding: 30px;
-            animation: b-i 1.5s ease-out forwards;
-            /* تطبيق حركة الدخول b-i (Bounce In) عند التحميل. */
-            transform-origin: top center
-            /* تحديد نقطة التحول للحركة (من الأعلى والوسط). */
-        }
-
-        @keyframes b-i {
-            /* 14. تعريف حركة الدخول b-i: */
-            0% {
-                opacity: 0;
-                transform: scale(.8) translateY(-100px)
-            }
-            /* البداية: شفافية 0 (مخفي)، مصغر، ومرتفع للأعلى. */
-            60% {
-                opacity: 1;
-                transform: scale(1.05) translateY(20px)
-            }
-            /* 60% من الحركة: يظهر بالكامل، ويكبر قليلاً، ويهبط قليلاً (تأثير ارتداد). */
-            100% {
-                transform: scale(1) translateY(0)
-            }
-            /* النهاية: بالحجم الطبيعي ومكانه النهائي. */
-        }
-
-        .g-c {
-            /* 15. تصميم الزجاج (Glassmorphism Effect) - يطبق على جميع الأقسام: */
-            background: var(--g-c);
-            /* خلفية شبه شفافة. */
-            backdrop-filter: blur(10px);
-            /* التأثير الأساسي: تمويه كل ما يقع خلف العنصر بقيمة 10px. */
-            -webkit-backdrop-filter: blur(10px);
-            /* دعم متصفحات WebKit (مثل Safari). */
-            border: 1px solid var(--g-b);
-            /* حد خفيف شبه شفاف يحاكي إطار الزجاج. */
-            border-radius: 18px;
-            box-shadow: 0 4px 30px rgba(0, 0, 0, .1);
-            padding: 25px;
-            transition: transform .3s ease;
-            /* تحضير لتأثير الـ Hover. */
-            color: #fff
-            /* لون النص داخل هذه الحاوية أبيض. */
-        }
-
-        .g-c:hover {
-            /* 16. تأثير التحويم على عناصر الزجاج: */
-            transform: translateY(-5px) scale(1.01)
-            /* يرتفع العنصر قليلاً (5 بكسل) ويكبر قليلاً. */
-        }
-
-        .f-g {
-            /* 17. تخطيط الشبكة للنموذج (Form Grid): */
-            display: grid;
-            /* تفعيل نظام الشبكة (CSS Grid). */
-            grid-template-columns: 1fr 1fr;
-            /* تقسيم الشبكة إلى عمودين متساويين في العرض (1fr). */
-            gap: 30px;
-            /* المسافة بين عناصر الشبكة. */
-            margin-top: 30px
-        }
-
-        .h-a {
-            /* 18. تنسيق رأس النموذج داخل الشبكة: */
-            grid-column: 1/span 2;
-            /* يمتد الرأس ليغطي كلا العمودين (من العمود 1 ويمتد لعمودين). */
-            text-align: center;
-            background: linear-gradient(45deg, var(--p-l), var(--p-d));
-            /* تدرج لوني خاص للرأس. */
             padding: 20px;
-            margin-bottom: 10px
+            line-height: 1.6;
         }
-
-        .h-a h1 {
-            /* 19. تنسيق عنوان الرأس. */
-            margin: 0;
-            font-size: 2.2em
-        }
-
-        .h-a p {
-            /* 20. تنسيق نص الرأس الفرعي. */
-            margin: 5px 0 0;
-            font-size: 1em;
-            opacity: .8
-        }
-
-        .sec h2 {
-            /* 21. تنسيق عناوين الأقسام (بيانات المصادقة، المهارات، إلخ): */
-            color: var(--p-d);
-            /* استخدام اللون المميز. */
-            border-bottom: 2px solid var(--g-b);
-            /* خط سفلي خفيف. */
-            padding-bottom: 10px;
-            margin-top: 0;
-            margin-bottom: 20px
-        }
-
-        .f-field {
-            /* 22. حاوية حقل الإدخال: */
-            margin-bottom: 15px
-        }
-
-        .f-field label {
-            /* 23. تنسيق وسوم الحقول: */
-            display: block;
-            /* يجعل الوسم يحتل سطرًا كاملاً. */
-            margin-bottom: 8px;
-            font-weight: 700;
-            color: #fff;
-            text-shadow: 1px 1px 2px rgba(0, 0, 0, .5)
-            /* ظل نصي خفيف لتحسين القراءة على خلفية الزجاج. */
-        }
-
-        input,
-        select,
-        textarea {
-            /* 24. تنسيق عناصر الإدخال (المدخلات، القائمة المنسدلة، والمساحة النصية): */
+        .icon{
             width: 100%;
-            padding: 12px;
-            border: none;
-            border-radius: 10px;
-            box-sizing: border-box;
-            /* يضمن أن البادينغ لا يزيد من عرض العنصر. */
-            background-color: rgba(255, 255, 255, .9);
-            /* خلفية بيضاء شبه معتمة. */
-            color: var(--d-t);
-            transition: transform .3s, box-shadow .3s
-            /* تهيئة للتأثير عند التركيز. */
+            height: 100%;
+            border-radius: 50%;
+            object-fit: cover;
         }
-
-        input:focus,
-        select:focus,
-        textarea:focus {
-            /* 25. تأثير التركيز (Focus): عند النقر على الحقل: */
-            box-shadow: 0 0 0 3px var(--p-d);
-            /* ظل خارجي بلون مميز. */
-            transform: scale(1.02);
-            /* تكبير طفيف. */
-            outline: none
-            /* إزالة الإطار الافتراضي للمتصفح. */
-        }
-
-        input[type="file"] {
-            /* 26. تنسيق خاص لحقل رفع الملفات. */
-            background-color: rgba(255, 255, 255, .7);
-            padding: 10px
-        }
-
-        input[type="color"] {
-            /* 27. تنسيق خاص لحقل اختيار اللون. */
-            height: 40px;
-            padding: 0;
-            cursor: pointer
-        }
-
-        .cb-g .o-c {
-            /* 28. تنسيق حاوية مربعات الاختيار (Options Container): */
+        
+        .welcome-container {
+            background-color: rgba(255, 255, 255, 0.95);
+            border-radius: 20px;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 900px;
+            overflow: hidden;
             display: flex;
-            gap: 20px;
-            margin-top: 10px
-            /* لعرض الخيارات في صف واحد. */
+            flex-direction: column;
         }
-
-        .cb-g label {
-            /* 29. تنسيق وسوم مربعات الاختيار لتظهر بجانب المربع. */
-            display: inline;
-            font-weight: 400;
-            text-shadow: none
-        }
-
-        .r-g #r-v {
-            /* 30. تنسيق عرض قيمة شريط التمرير (Range Value): */
-            display: block;
-            margin-top: 5px;
-            font-size: 1.1em;
-            font-weight: 700;
-            color: var(--p-d);
+        
+        .welcome-header {
+            background: linear-gradient(90deg, #2c3e50 0%, #4a6491 100%);
+            color: white;
+            padding: 30px;
             text-align: center;
-            text-shadow: 1px 1px 2px rgba(0, 0, 0, .5)
+            position: relative;
         }
-
-        .s-a {
-            /* 31. تنسيق حاوية زر الإرسال (Submit Area): */
-            grid-column: 1/span 2;
-            /* يمتد ليغطي كلا العمودين. */
+        
+        .welcome-header::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+        }
+        
+        .logo {
+            font-size: 2.8rem;
+            margin-bottom: 15px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 15px;
+        }
+        
+        .logo i {
+            color: #f1c40f;
+        }
+        
+        .welcome-header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+        
+        .welcome-header p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        
+        .welcome-content {
+            display: flex;
+            flex-wrap: wrap;
+            padding: 0;
+        }
+        
+        .welcome-message {
+            flex: 1;
+            min-width: 300px;
+            padding: 40px;
+            background-color: white;
+        }
+        
+        .welcome-message h2 {
+            color: #2c3e50;
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 3px solid #f1c40f;
+            display: inline-block;
+        }
+        
+        .welcome-message p {
+            margin-bottom: 20px;
+            font-size: 1.1rem;
+            color: #555;
+        }
+        
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 15px;
+            margin: 25px 0;
+        }
+        
+        .feature {
+            background: #f8f9fa;
+            padding: 15px;
+            border-radius: 10px;
+            border-right: 4px solid #3498db;
+            transition: transform 0.3s;
+        }
+        
+        .feature:hover {
+            transform: translateY(-5px);
+            background: #eef5ff;
+        }
+        
+        .feature i {
+            color: #3498db;
+            font-size: 1.5rem;
+margin-bottom: 10px;
+        }
+        
+        .feature h3 {
+            font-size: 1.1rem;
+            color: #2c3e50;
+            margin-bottom: 5px;
+        }
+        
+        .welcome-sidebar {
+            flex: 0 0 300px;
+            background: linear-gradient(180deg, #f8f9fa 0%, #e9ecef 100%);
+            padding: 40px 30px;
+            border-right: 1px solid #eaeaea;
+        }
+        
+        .user-info {
             text-align: center;
-            padding-top: 20px
+            margin-bottom: 30px;
         }
-
-        .s-b {
-            /* 32. تنسيق زر الإرسال (Submit Button) - تصميم مميز: */
-            padding: 18px 60px;
-            font-size: 1.3em;
-            font-weight: 700;
-            border-radius: 50px;
-            /* حدود مستديرة جداً. */
+        
+        .avatar {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #3498db 0%, #2c3e50 100%);
+            margin: 0 auto 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 3rem;
+            color: white;
+            border: 5px solid white;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .user-info h3 {
+            color: #2c3e50;
+            font-size: 1.5rem;
+            margin-bottom: 5px;
+        }
+        
+        .user-info p {
+            color: #7f8c8d;
+        }
+        
+        .actions {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            margin-top: 30px;
+        }
+        
+        .btn {
+            padding: 15px;
+            border-radius: 10px;
+            border: none;
+            font-size: 1.1rem;
+            font-weight: 600;
             cursor: pointer;
-            background: linear-gradient(90deg, #ff6b6b, #ee5253);
-            /* تدرج لوني أحمر/برتقالي. */
-            color: #fff;
-            box-shadow: 0 10px 20px rgba(255, 107, 107, .5);
-            /* ظل بارز. */
-            border: 2px solid #fff;
-            /* حد أبيض واضح. */
-            transition: all .3s ease
-            /* تهيئة لتأثير الـ Hover. */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+            transition: all 0.3s;
         }
-
-        .s-b:hover {
-            /* 33. تأثير التحويم على زر الإرسال (Hover Effect): */
-            background: linear-gradient(90deg, #ee5253, #ff6b6b);
-            /* عكس التدرج (تأثير بصري جذاب). */
-            transform: translateY(-5px) rotateX(10deg);
-            /* يرتفع 5 بكسل ويدور 10 درجات على المحور X (تأثير 3D). */
-            box-shadow: 0 15px 30px rgba(255, 107, 107, .8)
-            /* زيادة حدة الظل. */
+        
+        .btn-primary {
+            background: linear-gradient(to left, #3498db, #2c3e50);
+            color: white;
         }
-
-        @media (max-width:900px) {
-            /* 34. استعلام الوسائط (Media Query): قواعد تطبق على الشاشات الأصغر من 900px (مثل الأجهزة اللوحية والهواتف): */
-            .f-g {
-                grid-template-columns: 1fr;
-                /* تغيير التخطيط إلى عمود واحد فقط بدلاً من عمودين. */
-                gap: 20px
+        
+        .btn-primary:hover {
+            background: linear-gradient(to left, #2980b9, #1a252f);
+            transform: translateY(-3px);
+            box-shadow: 0 7px 15px rgba(52, 152, 219, 0.3);
+        }
+        
+        .btn-secondary {
+            background: #f8f9fa;
+            color: #2c3e50;
+            border: 2px solid #e9ecef;
+        }
+        
+        .btn-secondary:hover {
+            background: #e9ecef;
+            border-color: #3498db;
+        }
+        
+        .welcome-footer {
+            background-color: #f8f9fa;
+            padding: 20px;
+            text-align: center;
+            border-top: 1px solid #eaeaea;
+            color: #7f8c8d;
+            font-size: 0.9rem;
+        }
+        
+        .welcome-footer a {
+            color: #3498db;
+            text-decoration: none;
+        }
+        
+        @media (max-width: 768px) {
+            .welcome-content {
+                flex-direction: column;
             }
-
-            .h-a,
-            .s-a {
-                grid-column: 1/span 1
-                /* ضمان أن الرأس وزر الإرسال يغطيان العمود الوحيد. */
+            
+            .welcome-sidebar {
+                border-right: none;
+                border-top: 1px solid #eaeaea;
+                order: -1;
             }
-
-            .dash-c {
-                padding: 15px;
-                margin: 20px auto
-                /* تقليل الهوامش الداخلية والخارجية. */
+            
+            .welcome-header h1 {
+                font-size: 2rem;
             }
+            
+            .logo {
+                font-size: 2.2rem;
+            }
+        }
+        
+        .language-selector {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            background: rgba(255, 255, 255, 0.2);
+            padding: 5px 10px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+        
+        .language-selector select {
+            background: transparent;
+            border: none;
+            color: white;
+            font-weight: bold;
+            cursor: pointer;
+        }
+        
+        .language-selector option {
+            color: #333;
         }
     </style>
 </head>
-
 <body>
+    <div class="welcome-container">
+        <div class="welcome-header">
+            <div class="language-selector">
+                <i class="fas fa-globe"></i>
+                <select id="language">
+                    <option value="ar">العربية</option>
 
-    <div class="animated-bg"></div>
-
-    <div class="dash-c">
-
-        <header class="g-c h-a">
-            <h1>لوحة تحكم التسجيل الكبرى ✨</h1>
-            <p>مشروع:ENG. ABDULWALI ALI ABDULLAH MOQBEL AL-MASHRAQI</p>
-        </header>
-
-        <form class="f-g" action="#" method="POST">
-
-            <div class="g-c sec auth-section">
-                <h2>بيانات المصادقة</h2>
-
-                <div class="f-field">
-                    <label for="username">اسم المستخدم:</label>
-                    <input type="text" id="username" placeholder="اسم مستخدم فريد" required>
-                </div>
-
-                <div class="f-field">
-                    <label for="email">البريد الإلكتروني:</label>
-                    <input type="email" id="email" placeholder="بريد إلكتروني فعال" required>
-                </div>
-
-                <div class="f-field">
-                    <label for="password">كلمة المرور:</label>
-                    <input type="password" id="password" placeholder="كلمة مرور قوية" required>
-                </div>
-
-                <div class="f-field">
-                    <label for="dob">تاريخ الميلاد:</label>
-                    <input type="date" id="dob" required>
-                </div>
+<option value="en">English</option>
+                </select>
             </div>
-
-            <div class="g-c sec skills-section">
-                <h2>التخصص والمهارات</h2>
-
-                <div class="f-field">
-                    <label for="specialty">التخصص الأكاديمي:</label>
-                    <select id="specialty" required>
-                        <option value="" disabled selected>اختر تخصصك...</option>
-                        <option value="cs">الأمن السيبراني</option>
-                        <option value="software">هندسة البرمجيات</option>
-                        <option value="networking">شبكات الحاسوب</option>
-                    </select>
-                </div>
-
-                <div class="f-field cb-g">
-                    <label>الاهتمامات البرمجية:</label>
-                    <div class="o-c">
-                        <input type="checkbox" id="frontend"><label for="frontend">Front-End (واجهات)</label>
-                        <input type="checkbox" id="backend"><label for="backend">Back-End (خوادم)</label>
-                        <input type="checkbox" id="database"><label for="database">قواعد بيانات</label>
+            
+            <div class="logo">
+                <i class="fas fa-handshake"></i>
+                <span>مرحبًا بكم</span>
+            </div>
+            
+            <h1>أهلاً وسهلاً  </h1>
+            <p> نهدف إلى تقديم مجموعة من المشاريع .</p>
+        </div>
+        
+        <div class="welcome-content">
+            <div class="welcome-message">
+                <h2>Welcome </h2>
+                <p> المشاريع تشمل كل ما تم تناوله خلال الترم الدراسي .</p>
+                
+                <div class="features">
+                    <div class="feature">
+                        <i class="fas fa-bolt"></i>
+                        
+                    </div>
+                    <div class="feature">
+                        <i class="fas fa-shield-alt"></i>
+                       
+                    </div>
+                    <div class="feature">
+                        <i class="fas fa-mobile-alt"></i>
+                       
+                    </div>
+                    <div class="feature">
+                        <i class="fas fa-headset"></i>
+                       
                     </div>
                 </div>
+                
 
-                <div class="f-field r-g">
-                    <label for="experience">سنوات الخبرة (0-15):</label>
-                    <input type="range" id="experience" min="0" max="15" value="5">
-                    <span id="r-v">5 سنوات</span>
+            </div>
+            
+            <div class="welcome-sidebar">
+                <div class="user-info">
+                    <div class="avatar">
+                        <i class="fas fa-user"><div class="icon"><img src="ph.jptg" alt=""></div></i>
+                    </div>
+                    <h3>EN. ABDULWALI ALI ABDULLAH MOQBEL AL-MASHRAQI </h3>
+                    <p>مالك المشروع </p>
+                    <p>تاريخ المناقشة : 11/12/2025  </p>
+                </div>
+                
+                <div class="actions">
+                    <button class="btn btn-primary" id="startBtn">
+                        <i class="fas fa-play-circle"></i>
+                        ابدأ الاستخدام
+                    </button>
+                    <button class="btn btn-secondary" id="tourBtn" style="background-color: #f1c40f;">
+                        <i class="fas fa-calculator"></i>
+                        <a href="log.html" target="_blank" style="text-decoration: none;">الحاسبة </a>
+                        
+                    </button>
+                    <button class="btn btn-secondary" id="settingsBtn" style="background-color: rgb(0, 247, 255);">
+                        
+                        <i class="fas fa-plane"></i>
+                       <a href="proj.html" target="_blank"
+                        style="text-decoration: none;" > موقع حجز التذاكر الخطوط الجوية اليمنية</a>
+                    </button>
+                    <button class="btn btn-secondary" id="helpBtn" 
+                    style="background: lab(64.01% 5.5 -1.56) ; ">
+                        <i class="fas fa-envelope"></i>
+                            <a href="form.html" target="_blank" 
+                            style="text-decoration: none;"> التقديم لوظيفة </a>
+                        
+                        
+                    </button>
                 </div>
             </div>
-
-            <div class="g-c sec attachment-section">
-                <h2>المرفقات والملاحظات</h2>
-
-                <div class="f-field">
-                    <label for="cv_file">إرفاق السيرة الذاتية (CV):</label>
-                    <input type="file" id="cv_file" accept=".pdf,.doc,.docx" required>
-                </div>
-
-                <div class="f-field">
-                    <label for="color_choice">تفضيل لون الواجهة:</label>
-                    <input type="color" id="color_choice" value="#007bff">
-                </div>
-
-                <div class="f-field">
-                    <label for="notes">ملاحظات إضافية:</label>
-                    <textarea id="notes" rows="4" placeholder="اكتب أي ملاحظات هنا..."></textarea>
-                </div>
-            </div>
-
-            <div class="s-a">
-                <button type="submit" class="s-b">إرسال النموذج والتسجيل الآن</button>
-            </div>
-
-        </form>
-
+        </div>
+        
+        <div class="welcome-footer">
+            <p>© 2025 جميع الحقوق محفوظة | <a href="#">سياسة الخصوصية</a> | <a href="#">شروط الاستخدام</a></p>
+            <p>تواصل معنا: <a href="mailto:support@example.com">almalsi@gmail.com</a><br> <a href="#"><i class="fab fa-phone"></i>| الهاتف: 7825130</a></p>
+              <a href="#"><i class="fab fa-twitter"></i> twitter</a><br>
+              <a href="#"><i class="fab fa-facebook"></i> Mohammed Almalsi</a><br>
+              <a href="#"><i class="fab fa-instagram"></i> m.moha77o</a>
+        </div>
     </div>
 
-    <script>
-        // 45. بداية جزء JavaScript (وظيفة عرض قيمة شريط التمرير).
-        const range = document.getElementById('experience'),
-            rangeValue = document.getElementById('r-v');
-        // الحصول على عناصر شريط التمرير (range) وعرض القيمة (rangeValue).
-
-        range.addEventListener('input', () =>
-            // إضافة مستمع حدث: يتم تفعيله عند أي تغيير في قيمة الشريط (input).
-            rangeValue.textContent = range.value + ' سنوات'
-            // تحديث محتوى النص لعرض القيمة الحالية متبوعة بـ " سنوات".
-        );
-        // 46. نهاية JavaScript.
+<script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // تبديل اللغة
+            const languageSelect = document.getElementById('language');
+            languageSelect.addEventListener('change', function() {
+                if (this.value === 'en') {
+                    document.querySelector('.logo span').textContent = 'Welcome';
+                    document.querySelector('.welcome-header h1').textContent = 'Welcome to Our Platform';
+                    document.querySelector('.welcome-header p').textContent = 'We are happy to have you join us! We aim to provide a unique and distinctive user experience that suits all your needs.';
+                    document.querySelector('.welcome-message h2').textContent = 'Welcome Message';
+                    document.querySelectorAll('.welcome-message p')[0].textContent = 'We are delighted to welcome you to our new platform. We have designed this interface specifically to meet your expectations and provide the best possible experience. We hope you find everything you need here.';
+                    document.querySelectorAll('.feature h3')[0].textContent = 'High Speed';
+                    document.querySelectorAll('.feature p')[0].textContent = 'Fast responsive design for better performance';
+                    document.querySelectorAll('.feature h3')[1].textContent = 'Secure & Safe';
+                    document.querySelectorAll('.feature p')[1].textContent = 'We protect your data with highest security standards';
+                    document.querySelectorAll('.feature h3')[2].textContent = 'Multi-Device';
+                    document.querySelectorAll('.feature p')[2].textContent = 'Works on all screen sizes';
+                    document.querySelectorAll('.feature h3')[3].textContent = 'Technical Support';
+                    document.querySelectorAll('.feature p')[3].textContent = '24/7 continuous technical support';
+                    document.querySelectorAll('.welcome-message p')[1].textContent = 'To start using the platform, you can explore the different features or modify your personal account settings. If you encounter any difficulties, the technical support team is ready to help you at any time.';
+                    document.querySelector('.user-info h3').textContent = 'Ahmed Mohamed';
+                    document.querySelectorAll('.user-info p')[0].textContent = 'New User';
+                    document.querySelectorAll('.user-info p')[1].textContent = 'Join Date: May 12, 2023';
+                    document.getElementById('startBtn').innerHTML = '<i class="fas fa-play-circle"></i> Start Using';
+                    document.getElementById('tourBtn').innerHTML = '<i class="fas fa-map-signs"></i> Guided Tour';
+                    document.getElementById('settingsBtn').innerHTML = '<i class="fas fa-cog"></i> Settings';
+                    document.getElementById('helpBtn').innerHTML = '<i class="fas fa-question-circle"></i> Help';
+                    document.querySelector('.welcome-footer p').innerHTML = '© 2023 All Rights Reserved | <a href="#">Privacy Policy</a> | <a href="#">Terms of Use</a>';
+                    document.querySelectorAll('.welcome-footer p')[1].innerHTML = 'Contact Us: <a href="mailto:support@example.com">support@example.com</a> | Phone: 0123456789';
+                } else {
+                    location.reload();
+                }
+            });
+            
+            // تفاعل الأزرار
+            const startBtn = document.getElementById('startBtn');
+            const tourBtn = document.getElementById('tourBtn');
+            const settingsBtn = document.getElementById('settingsBtn');
+            const helpBtn = document.getElementById('helpBtn');
+            
+            startBtn.addEventListener('click', function() {
+                alert('مرحبًا! سنقوم بتوجيهك إلى الصفحة الرئيسية الآن.');
+                this.innerHTML = '<i class="fas fa-spinner fa-spin"></i> جاري التوجيه...';
+                this.disabled = true;
+                
+                setTimeout(() => {
+this.innerHTML = '<i class="fas fa-check"></i> تم التوجيه!';
+                }, 1500);
+            });
+            
+            tourBtn.addEventListener('click', function() {
+                alert('سنبدأ تحويل الى صفحة الالة الحاسبة انقر على"موافق" إذا كنت تريد تنفيذ العملية.');
+            });
+            
+            settingsBtn.addEventListener('click', function() {
+                alert('سيتم فتح صفحة التذاكر والحجز للتسجيل انقر على "موافق" .');
+            });
+            
+            helpBtn.addEventListener('click', function() {
+                alert('سيتم فتح مركز المساعدة حيث يمكنك العثور على إجابات لأسئلتك الشائعة أو التواصل مع الدعم.');
+            });
+            
+            // تأثيرات عند التمرير
+            window.addEventListener('scroll', function() {
+                const header = document.querySelector('.welcome-header');
+                const scrollPosition = window.scrollY;
+                
+                if (scrollPosition > 50) {
+                    header.style.boxShadow = '0 5px 15px rgba(0, 0, 0, 0.1)';
+                } else {تجربتك
+                    header.style.boxShadow = 'none';
+                }
+            });
+        });
     </script>
 </body>
-
 </html>
