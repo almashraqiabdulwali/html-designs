@@ -1,26 +1,348 @@
-<!DOCTYPE html><html lang="ar" dir="rtl"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Mega Registration Dashboard | Abdulwali Al-Mashraqi</title><link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap" rel="stylesheet"><style>
-:root{--p-l:#4c68ff;--p-d:#00bcd4;--g-c:rgba(255,255,255,.2);--g-b:rgba(255,255,255,.3);--d-t:#1a2a47}body{font-family:'Cairo',sans-serif;margin:0;padding:0;min-height:100vh;display:flex;justify-content:center;align-items:center;direction:rtl;overflow-x:hidden;perspective:1500px}.animated-bg{position:fixed;top:0;left:0;width:200%;height:200%;background:linear-gradient(135deg,#1f005c,#5b0060,#870160,#ac255e,#ca485c,#e16b5c,#f39060,#ffb568);background-size:400% 400%;animation:g-s 30s ease infinite;z-index:-1}@keyframes g-s{0%{background-position:0 50%}50%{background-position:100% 50%}100%{background-position:0 50%}}.dash-c{width:90%;max-width:1100px;margin:50px auto;padding:30px;animation:b-i 1.5s ease-out forwards;transform-origin:top center}@keyframes b-i{0%{opacity:0;transform:scale(.8) translateY(-100px)}60%{opacity:1;transform:scale(1.05) translateY(20px)}100%{transform:scale(1) translateY(0)}}.g-c{background:var(--g-c);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border:1px solid var(--g-b);border-radius:18px;box-shadow:0 4px 30px rgba(0,0,0,.1);padding:25px;transition:transform .3s ease;color:#fff}.g-c:hover{transform:translateY(-5px) scale(1.01)}.f-g{display:grid;grid-template-columns:1fr 1fr;gap:30px;margin-top:30px}.h-a{grid-column:1/span 2;text-align:center;background:linear-gradient(45deg,var(--p-l),var(--p-d));padding:20px;margin-bottom:10px}.h-a h1{margin:0;font-size:2.2em}.h-a p{margin:5px 0 0;font-size:1em;opacity:.8}.sec h2{color:var(--p-d);border-bottom:2px solid var(--g-b);padding-bottom:10px;margin-top:0;margin-bottom:20px}.f-field{margin-bottom:15px}.f-field label{display:block;margin-bottom:8px;font-weight:700;color:#fff;text-shadow:1px 1px 2px rgba(0,0,0,.5)}input,select,textarea{width:100%;padding:12px;border:none;border-radius:10px;box-sizing:border-box;background-color:rgba(255,255,255,.9);color:var(--d-t);transition:transform .3s,box-shadow .3s}input:focus,select:focus,textarea:focus{box-shadow:0 0 0 3px var(--p-d);transform:scale(1.02);outline:none}input[type="file"]{background-color:rgba(255,255,255,.7);padding:10px}input[type="color"]{height:40px;padding:0;cursor:pointer}.cb-g .o-c{display:flex;gap:20px;margin-top:10px}.cb-g label{display:inline;font-weight:400;text-shadow:none}.r-g #r-v{display:block;margin-top:5px;font-size:1.1em;font-weight:700;color:var(--p-d);text-align:center;text-shadow:1px 1px 2px rgba(0,0,0,.5)}.s-a{grid-column:1/span 2;text-align:center;padding-top:20px}.s-b{padding:18px 60px;font-size:1.3em;font-weight:700;border-radius:50px;cursor:pointer;background:linear-gradient(90deg,#ff6b6b,#ee5253);color:#fff;box-shadow:0 10px 20px rgba(255,107,107,.5);border:2px solid #fff;transition:all .3s ease}.s-b:hover{background:linear-gradient(90deg,#ee5253,#ff6b6b);transform:translateY(-5px) rotateX(10deg);box-shadow:0 15px 30px rgba(255,107,107,.8)}@media (max-width:900px){.f-g{grid-template-columns:1fr;gap:20px}.h-a,.s-a{grid-column:1/span 1}.dash-c{padding:15px;margin:20px auto}}
-</style></head><body>
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mega Registration Dashboard | Abdulwali Al-Mashraqi</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        /* 8. بداية جزء CSS: التنسيق الكامل للصفحة. */
+
+        :root {
+            /* 9. متغيرات CSS (Variables): لتحديد الألوان الرئيسية وإعادة استخدامها. */
+            --p-l: #4c68ff;
+            /* اللون الأساسي الفاتح (Primary Light) */
+            --p-d: #00bcd4;
+            /* اللون الأساسي الداكن/المميز (Primary Dark) */
+            --g-c: rgba(255, 255, 255, .2);
+            /* لون خلفية الزجاج (Glass Color): أبيض بشفافية 20% */
+            --g-b: rgba(255, 255, 255, .3);
+            /* لون حد الزجاج (Glass Border): أبيض بشفافية 30% */
+            --d-t: #1a2a47;
+            /* لون النص الداكن (Dark Text) */
+        }
+
+        body {
+            /* 10. تنسيق الجسم (Body): */
+            font-family: 'Cairo', sans-serif;
+            /* تطبيق خط Cairo. */
+            margin: 0;
+            padding: 0;
+            min-height: 100vh;
+            /* ضمان ملء الشاشة عمودياً. */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            /* توسيط المحتوى أفقياً وعمودياً باستخدام Flexbox. */
+            direction: rtl;
+            /* تطبيق اتجاه اليمين لليسار. */
+            overflow-x: hidden;
+            /* منع شريط التمرير الأفقي. */
+            perspective: 1500px
+            /* تحديد منظور 3D لتأثيرات مثل دوران الزر. */
+        }
+
+        .animated-bg {
+            /* 11. الخلفية المتحركة (Animated Background): */
+            position: fixed;
+            /* تثبيت الخلفية في الشاشة. */
+            top: 0;
+            left: 0;
+            width: 200%;
+            height: 200%;
+            /* مضاعفة الحجم للسماح بالحركة السلسة للتدرج اللوني. */
+            background: linear-gradient(135deg, #1f005c, #5b0060, #870160, #ac255e, #ca485c, #e16b5c, #f39060, #ffb568);
+            /* تحديد التدرج اللوني المعقد. */
+            background-size: 400% 400%;
+            /* مضاعفة حجم التدرج أربع مرات. */
+            animation: g-s 30s ease infinite;
+            /* تطبيق حركة g-s (Gradient Shift) لمدة 30 ثانية بشكل لا نهائي. */
+            z-index: -1
+            /* وضع الخلفية خلف جميع العناصر الأخرى. */
+        }
+
+        @keyframes g-s {
+            /* 12. تعريف الحركة g-s: */
+            0% {
+                background-position: 0 50%
+            }
+            /* عند البداية، موضع الخلفية الأفقي 0%. */
+            50% {
+                background-position: 100% 50%
+            }
+            /* في المنتصف، يتحرك الموضع الأفقي إلى 100%. */
+            100% {
+                background-position: 0 50%
+            }
+            /* العودة إلى البداية لاستمرار الحركة (حلقة لا نهائية). */
+        }
+
+        .dash-c {
+            /* 13. حاوية لوحة التحكم الرئيسية (Dashboard Container): */
+            width: 90%;
+            max-width: 1100px;
+            margin: 50px auto;
+            padding: 30px;
+            animation: b-i 1.5s ease-out forwards;
+            /* تطبيق حركة الدخول b-i (Bounce In) عند التحميل. */
+            transform-origin: top center
+            /* تحديد نقطة التحول للحركة (من الأعلى والوسط). */
+        }
+
+        @keyframes b-i {
+            /* 14. تعريف حركة الدخول b-i: */
+            0% {
+                opacity: 0;
+                transform: scale(.8) translateY(-100px)
+            }
+            /* البداية: شفافية 0 (مخفي)، مصغر، ومرتفع للأعلى. */
+            60% {
+                opacity: 1;
+                transform: scale(1.05) translateY(20px)
+            }
+            /* 60% من الحركة: يظهر بالكامل، ويكبر قليلاً، ويهبط قليلاً (تأثير ارتداد). */
+            100% {
+                transform: scale(1) translateY(0)
+            }
+            /* النهاية: بالحجم الطبيعي ومكانه النهائي. */
+        }
+
+        .g-c {
+            /* 15. تصميم الزجاج (Glassmorphism Effect) - يطبق على جميع الأقسام: */
+            background: var(--g-c);
+            /* خلفية شبه شفافة. */
+            backdrop-filter: blur(10px);
+            /* التأثير الأساسي: تمويه كل ما يقع خلف العنصر بقيمة 10px. */
+            -webkit-backdrop-filter: blur(10px);
+            /* دعم متصفحات WebKit (مثل Safari). */
+            border: 1px solid var(--g-b);
+            /* حد خفيف شبه شفاف يحاكي إطار الزجاج. */
+            border-radius: 18px;
+            box-shadow: 0 4px 30px rgba(0, 0, 0, .1);
+            padding: 25px;
+            transition: transform .3s ease;
+            /* تحضير لتأثير الـ Hover. */
+            color: #fff
+            /* لون النص داخل هذه الحاوية أبيض. */
+        }
+
+        .g-c:hover {
+            /* 16. تأثير التحويم على عناصر الزجاج: */
+            transform: translateY(-5px) scale(1.01)
+            /* يرتفع العنصر قليلاً (5 بكسل) ويكبر قليلاً. */
+        }
+
+        .f-g {
+            /* 17. تخطيط الشبكة للنموذج (Form Grid): */
+            display: grid;
+            /* تفعيل نظام الشبكة (CSS Grid). */
+            grid-template-columns: 1fr 1fr;
+            /* تقسيم الشبكة إلى عمودين متساويين في العرض (1fr). */
+            gap: 30px;
+            /* المسافة بين عناصر الشبكة. */
+            margin-top: 30px
+        }
+
+        .h-a {
+            /* 18. تنسيق رأس النموذج داخل الشبكة: */
+            grid-column: 1/span 2;
+            /* يمتد الرأس ليغطي كلا العمودين (من العمود 1 ويمتد لعمودين). */
+            text-align: center;
+            background: linear-gradient(45deg, var(--p-l), var(--p-d));
+            /* تدرج لوني خاص للرأس. */
+            padding: 20px;
+            margin-bottom: 10px
+        }
+
+        .h-a h1 {
+            /* 19. تنسيق عنوان الرأس. */
+            margin: 0;
+            font-size: 2.2em
+        }
+
+        .h-a p {
+            /* 20. تنسيق نص الرأس الفرعي. */
+            margin: 5px 0 0;
+            font-size: 1em;
+            opacity: .8
+        }
+
+        .sec h2 {
+            /* 21. تنسيق عناوين الأقسام (بيانات المصادقة، المهارات، إلخ): */
+            color: var(--p-d);
+            /* استخدام اللون المميز. */
+            border-bottom: 2px solid var(--g-b);
+            /* خط سفلي خفيف. */
+            padding-bottom: 10px;
+            margin-top: 0;
+            margin-bottom: 20px
+        }
+
+        .f-field {
+            /* 22. حاوية حقل الإدخال: */
+            margin-bottom: 15px
+        }
+
+        .f-field label {
+            /* 23. تنسيق وسوم الحقول: */
+            display: block;
+            /* يجعل الوسم يحتل سطرًا كاملاً. */
+            margin-bottom: 8px;
+            font-weight: 700;
+            color: #fff;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, .5)
+            /* ظل نصي خفيف لتحسين القراءة على خلفية الزجاج. */
+        }
+
+        input,
+        select,
+        textarea {
+            /* 24. تنسيق عناصر الإدخال (المدخلات، القائمة المنسدلة، والمساحة النصية): */
+            width: 100%;
+            padding: 12px;
+            border: none;
+            border-radius: 10px;
+            box-sizing: border-box;
+            /* يضمن أن البادينغ لا يزيد من عرض العنصر. */
+            background-color: rgba(255, 255, 255, .9);
+            /* خلفية بيضاء شبه معتمة. */
+            color: var(--d-t);
+            transition: transform .3s, box-shadow .3s
+            /* تهيئة للتأثير عند التركيز. */
+        }
+
+        input:focus,
+        select:focus,
+        textarea:focus {
+            /* 25. تأثير التركيز (Focus): عند النقر على الحقل: */
+            box-shadow: 0 0 0 3px var(--p-d);
+            /* ظل خارجي بلون مميز. */
+            transform: scale(1.02);
+            /* تكبير طفيف. */
+            outline: none
+            /* إزالة الإطار الافتراضي للمتصفح. */
+        }
+
+        input[type="file"] {
+            /* 26. تنسيق خاص لحقل رفع الملفات. */
+            background-color: rgba(255, 255, 255, .7);
+            padding: 10px
+        }
+
+        input[type="color"] {
+            /* 27. تنسيق خاص لحقل اختيار اللون. */
+            height: 40px;
+            padding: 0;
+            cursor: pointer
+        }
+
+        .cb-g .o-c {
+            /* 28. تنسيق حاوية مربعات الاختيار (Options Container): */
+            display: flex;
+            gap: 20px;
+            margin-top: 10px
+            /* لعرض الخيارات في صف واحد. */
+        }
+
+        .cb-g label {
+            /* 29. تنسيق وسوم مربعات الاختيار لتظهر بجانب المربع. */
+            display: inline;
+            font-weight: 400;
+            text-shadow: none
+        }
+
+        .r-g #r-v {
+            /* 30. تنسيق عرض قيمة شريط التمرير (Range Value): */
+            display: block;
+            margin-top: 5px;
+            font-size: 1.1em;
+            font-weight: 700;
+            color: var(--p-d);
+            text-align: center;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, .5)
+        }
+
+        .s-a {
+            /* 31. تنسيق حاوية زر الإرسال (Submit Area): */
+            grid-column: 1/span 2;
+            /* يمتد ليغطي كلا العمودين. */
+            text-align: center;
+            padding-top: 20px
+        }
+
+        .s-b {
+            /* 32. تنسيق زر الإرسال (Submit Button) - تصميم مميز: */
+            padding: 18px 60px;
+            font-size: 1.3em;
+            font-weight: 700;
+            border-radius: 50px;
+            /* حدود مستديرة جداً. */
+            cursor: pointer;
+            background: linear-gradient(90deg, #ff6b6b, #ee5253);
+            /* تدرج لوني أحمر/برتقالي. */
+            color: #fff;
+            box-shadow: 0 10px 20px rgba(255, 107, 107, .5);
+            /* ظل بارز. */
+            border: 2px solid #fff;
+            /* حد أبيض واضح. */
+            transition: all .3s ease
+            /* تهيئة لتأثير الـ Hover. */
+        }
+
+        .s-b:hover {
+            /* 33. تأثير التحويم على زر الإرسال (Hover Effect): */
+            background: linear-gradient(90deg, #ee5253, #ff6b6b);
+            /* عكس التدرج (تأثير بصري جذاب). */
+            transform: translateY(-5px) rotateX(10deg);
+            /* يرتفع 5 بكسل ويدور 10 درجات على المحور X (تأثير 3D). */
+            box-shadow: 0 15px 30px rgba(255, 107, 107, .8)
+            /* زيادة حدة الظل. */
+        }
+
+        @media (max-width:900px) {
+            /* 34. استعلام الوسائط (Media Query): قواعد تطبق على الشاشات الأصغر من 900px (مثل الأجهزة اللوحية والهواتف): */
+            .f-g {
+                grid-template-columns: 1fr;
+                /* تغيير التخطيط إلى عمود واحد فقط بدلاً من عمودين. */
+                gap: 20px
+            }
+
+            .h-a,
+            .s-a {
+                grid-column: 1/span 1
+                /* ضمان أن الرأس وزر الإرسال يغطيان العمود الوحيد. */
+            }
+
+            .dash-c {
+                padding: 15px;
+                margin: 20px auto
+                /* تقليل الهوامش الداخلية والخارجية. */
+            }
+        }
+    </style>
+</head>
+
+<body>
 
     <div class="animated-bg"></div>
 
     <div class="dash-c">
-        
+
         <header class="g-c h-a">
             <h1>لوحة تحكم التسجيل الكبرى ✨</h1>
             <p>مشروع:ENG. ABDULWALI ALI ABDULLAH MOQBEL AL-MASHRAQI</p>
         </header>
 
         <form class="f-g" action="#" method="POST">
-            
+
             <div class="g-c sec auth-section">
                 <h2>بيانات المصادقة</h2>
-                
+
                 <div class="f-field">
                     <label for="username">اسم المستخدم:</label>
                     <input type="text" id="username" placeholder="اسم مستخدم فريد" required>
                 </div>
-                
+
                 <div class="f-field">
                     <label for="email">البريد الإلكتروني:</label>
                     <input type="email" id="email" placeholder="بريد إلكتروني فعال" required>
@@ -30,7 +352,7 @@
                     <label for="password">كلمة المرور:</label>
                     <input type="password" id="password" placeholder="كلمة مرور قوية" required>
                 </div>
-                
+
                 <div class="f-field">
                     <label for="dob">تاريخ الميلاد:</label>
                     <input type="date" id="dob" required>
@@ -49,7 +371,7 @@
                         <option value="networking">شبكات الحاسوب</option>
                     </select>
                 </div>
-                
+
                 <div class="f-field cb-g">
                     <label>الاهتمامات البرمجية:</label>
                     <div class="o-c">
@@ -78,22 +400,34 @@
                     <label for="color_choice">تفضيل لون الواجهة:</label>
                     <input type="color" id="color_choice" value="#007bff">
                 </div>
-                
+
                 <div class="f-field">
                     <label for="notes">ملاحظات إضافية:</label>
                     <textarea id="notes" rows="4" placeholder="اكتب أي ملاحظات هنا..."></textarea>
                 </div>
             </div>
-            
+
             <div class="s-a">
                 <button type="submit" class="s-b">إرسال النموذج والتسجيل الآن</button>
             </div>
-            
+
         </form>
-        
+
     </div>
-    
+
     <script>
-        const range=document.getElementById('experience'),rangeValue=document.getElementById('r-v');range.addEventListener('input',()=>rangeValue.textContent=range.value+' سنوات');
+        // 45. بداية جزء JavaScript (وظيفة عرض قيمة شريط التمرير).
+        const range = document.getElementById('experience'),
+            rangeValue = document.getElementById('r-v');
+        // الحصول على عناصر شريط التمرير (range) وعرض القيمة (rangeValue).
+
+        range.addEventListener('input', () =>
+            // إضافة مستمع حدث: يتم تفعيله عند أي تغيير في قيمة الشريط (input).
+            rangeValue.textContent = range.value + ' سنوات'
+            // تحديث محتوى النص لعرض القيمة الحالية متبوعة بـ " سنوات".
+        );
+        // 46. نهاية JavaScript.
     </script>
-</body></html>
+</body>
+
+</html>
