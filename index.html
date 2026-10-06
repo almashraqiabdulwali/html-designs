@@ -1,101 +1,421 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
 
+<head>
+    <meta charset="UTF-8">
+    <title>Cyber Gravity Shield - Documentation</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.8;
+            color: #333;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 40px;
+            background-color: #f9fbfd;
+        }
 
-<!DOCTYPE html><html lang="ar" dir="rtl"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Mega Registration Dashboard | Abdulwali Al-Mashraqi</title><link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap" rel="stylesheet"><style>
-:root{--p-l:#4c68ff;--p-d:#00bcd4;--g-c:rgba(255,255,255,.2);--g-b:rgba(255,255,255,.3);--d-t:#1a2a47}body{font-family:'Cairo',sans-serif;margin:0;padding:0;min-height:100vh;display:flex;justify-content:center;align-items:center;direction:rtl;overflow-x:hidden;perspective:1500px}.animated-bg{position:fixed;top:0;left:0;width:200%;height:200%;background:linear-gradient(135deg,#1f005c,#5b0060,#870160,#ac255e,#ca485c,#e16b5c,#f39060,#ffb568);background-size:400% 400%;animation:g-s 30s ease infinite;z-index:-1}@keyframes g-s{0%{background-position:0 50%}50%{background-position:100% 50%}100%{background-position:0 50%}}.dash-c{width:90%;max-width:1100px;margin:50px auto;padding:30px;animation:b-i 1.5s ease-out forwards;transform-origin:top center}@keyframes b-i{0%{opacity:0;transform:scale(.8) translateY(-100px)}60%{opacity:1;transform:scale(1.05) translateY(20px)}100%{transform:scale(1) translateY(0)}}.g-c{background:var(--g-c);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border:1px solid var(--g-b);border-radius:18px;box-shadow:0 4px 30px rgba(0,0,0,.1);padding:25px;transition:transform .3s ease;color:#fff}.g-c:hover{transform:translateY(-5px) scale(1.01)}.f-g{display:grid;grid-template-columns:1fr 1fr;gap:30px;margin-top:30px}.h-a{grid-column:1/span 2;text-align:center;background:linear-gradient(45deg,var(--p-l),var(--p-d));padding:20px;margin-bottom:10px}.h-a h1{margin:0;font-size:2.2em}.h-a p{margin:5px 0 0;font-size:1em;opacity:.8}.sec h2{color:var(--p-d);border-bottom:2px solid var(--g-b);padding-bottom:10px;margin-top:0;margin-bottom:20px}.f-field{margin-bottom:15px}.f-field label{display:block;margin-bottom:8px;font-weight:700;color:#fff;text-shadow:1px 1px 2px rgba(0,0,0,.5)}input,select,textarea{width:100%;padding:12px;border:none;border-radius:10px;box-sizing:border-box;background-color:rgba(255,255,255,.9);color:var(--d-t);transition:transform .3s,box-shadow .3s}input:focus,select:focus,textarea:focus{box-shadow:0 0 0 3px var(--p-d);transform:scale(1.02);outline:none}input[type="file"]{background-color:rgba(255,255,255,.7);padding:10px}input[type="color"]{height:40px;padding:0;cursor:pointer}.cb-g .o-c{display:flex;gap:20px;margin-top:10px}.cb-g label{display:inline;font-weight:400;text-shadow:none}.r-g #r-v{display:block;margin-top:5px;font-size:1.1em;font-weight:700;color:var(--p-d);text-align:center;text-shadow:1px 1px 2px rgba(0,0,0,.5)}.s-a{grid-column:1/span 2;text-align:center;padding-top:20px}.s-b{padding:18px 60px;font-size:1.3em;font-weight:700;border-radius:50px;cursor:pointer;background:linear-gradient(90deg,#ff6b6b,#ee5253);color:#fff;box-shadow:0 10px 20px rgba(255,107,107,.5);border:2px solid #fff;transition:all .3s ease}.s-b:hover{background:linear-gradient(90deg,#ee5253,#ff6b6b);transform:translateY(-5px) rotateX(10deg);box-shadow:0 15px 30px rgba(255,107,107,.8)}@media (max-width:900px){.f-g{grid-template-columns:1fr;gap:20px}.h-a,.s-a{grid-column:1/span 1}.dash-c{padding:15px;margin:20px auto}}
-</style></head><body>
+        .cover {
+            text-align: center;
+            padding: 100px 20px;
+            background: linear-gradient(135deg, #1a2a6c, #11998e, #38ef7d);
+            color: white;
+            border-radius: 12px;
+            margin-bottom: 50px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
 
-    <div class="animated-bg"></div>
+        .cover h1 {
+            font-size: 3em;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
 
-    <div class="dash-c">
+        .cover h2 {
+            font-size: 1.5em;
+            font-weight: 300;
+            margin-bottom: 40px;
+        }
 
-        <header class="g-c h-a">
-            <h1>لوحة تحكم التسجيل الكبرى ✨</h1>
-            <p>مشروع:ENG. ABDULWALI ALI ABDULLAH MOQBEL AL-MASHRAQI</p>
-        </header>
+        .student-info {
+            font-size: 1.2em;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 20px;
+            border-radius: 8px;
+            display: inline-block;
+            backdrop-filter: blur(5px);
+        }
 
-        <form class="f-g" action="#" method="POST">
+        h2.section-title {
+            color: #1a2a6c;
+            border-bottom: 2px solid #11998e;
+            padding-bottom: 10px;
+            margin-top: 50px;
+            font-size: 1.8em;
+        }
 
-            <div class="g-c sec auth-section">
-                <h2>بيانات المصادقة</h2>
+        h3 {
+            color: #11998e;
+            margin-top: 30px;
+        }
 
-                <div class="f-field">
-                    <label for="username">اسم المستخدم:</label>
-                    <input type="text" id="username" placeholder="اسم مستخدم فريد" required>
-                </div>
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+            background: white;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+        }
 
-                <div class="f-field">
-                    <label for="email">البريد الإلكتروني:</label>
-                    <input type="email" id="email" placeholder="بريد إلكتروني فعال" required>
-                </div>
+        th,
+        td {
+            border: 1px solid #ddd;
+            padding: 12px 15px;
+            text-align: right;
+        }
 
-                <div class="f-field">
-                    <label for="password">كلمة المرور:</label>
-                    <input type="password" id="password" placeholder="كلمة مرور قوية" required>
-                </div>
+        th {
+            background-color: #1a2a6c;
+            color: white;
+        }
 
-                <div class="f-field">
-                    <label for="dob">تاريخ الميلاد:</label>
-                    <input type="date" id="dob" required>
-                </div>
-            </div>
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
 
-            <div class="g-c sec skills-section">
-                <h2>التخصص والمهارات</h2>
+        ul,
+        ol {
+            padding-right: 25px;
+        }
 
-                <div class="f-field">
-                    <label for="specialty">التخصص الأكاديمي:</label>
-                    <select id="specialty" required>
-                        <option value="" disabled selected>اختر تخصصك...</option>
-                        <option value="cs">الأمن السيبراني</option>
-                        <option value="software">هندسة البرمجيات</option>
-                        <option value="networking">شبكات الحاسوب</option>
-                    </select>
-                </div>
+        li {
+            margin-bottom: 10px;
+        }
 
-                <div class="f-field cb-g">
-                    <label>الاهتمامات البرمجية:</label>
-                    <div class="o-c">
-                        <input type="checkbox" id="frontend"><label for="frontend">Front-End (واجهات)</label>
-                        <input type="checkbox" id="backend"><label for="backend">Back-End (خوادم)</label>
-                        <input type="checkbox" id="database"><label for="database">قواعد بيانات</label>
-                    </div>
-                </div>
+        .note {
+            background-color: #fff3cd;
+            border-right: 5px solid #ffecb5;
+            padding: 15px;
+            border-radius: 4px;
+            margin: 20px 0;
+            color: #856404;
+        }
 
-                <div class="f-field r-g">
-                    <label for="experience">سنوات الخبرة (0-15):</label>
-                    <input type="range" id="experience" min="0" max="15" value="5">
-                    <span id="r-v">5 سنوات</span>
-                </div>
-            </div>
+        @media print {
+            body {
+                background: white;
+                padding: 0;
+            }
 
-            <div class="g-c sec attachment-section">
-                <h2>المرفقات والملاحظات</h2>
+            .cover {
+                background: white;
+                color: black;
+                box-shadow: none;
+                border: 2px solid #333;
+                page-break-after: always;
+            }
 
-                <div class="f-field">
-                    <label for="cv_file">إرفاق السيرة الذاتية (CV):</label>
-                    <input type="file" id="cv_file" accept=".pdf,.doc,.docx" required>
-                </div>
+            .cover h1 {
+                text-shadow: none;
+            }
 
-                <div class="f-field">
-                    <label for="color_choice">تفضيل لون الواجهة:</label>
-                    <input type="color" id="color_choice" value="#007bff">
-                </div>
+            .student-info {
+                background: transparent;
+                border: 1px solid #ccc;
+                color: black;
+            }
 
-                <div class="f-field">
-                    <label for="notes">ملاحظات إضافية:</label>
-                    <textarea id="notes" rows="4" placeholder="اكتب أي ملاحظات هنا..."></textarea>
-                </div>
-            </div>
+            h2.section-title {
+                page-break-before: auto;
+            }
 
-            <div class="s-a">
-                <button type="submit" class="s-b">إرسال النموذج والتسجيل الآن</button>
-            </div>
+            th {
+                background-color: #eee;
+                color: black;
+            }
+        }
+    </style>
+</head>
 
-        </form>
+<body>
 
-    </div>
+    <div class="cover">
+        <h1>Cyber Gravity Shield</h1>
+        <h2>مشروع في الأمن السيبراني</h2>
+        <div class="student-info">
+            <p><strong>إعداد الطالب:</strong> عبدالولي علي عبدالله مقبل المشرقي</p>
+            <p><strong>إشراف:</strong> الدكتورة رناء</p>
+            <p><strong>التخصص:</strong> الأمن السيبراني</p>
+        </div>
+    </div>
 
-    <script>
-        const range=document.getElementById('experience'),rangeValue=document.getElementById('r-v');range.addEventListener('input',()=>rangeValue.textContent=range.value+' سنوات');
-    </script>
-</body></html>
+    <h2 class="section-title">1. مقدمة عن المشروع</h2>
+    <p>مشروع <strong>Cyber Gravity Shield</strong> هو تطبيق هاتف ذكي متقدم تم تطويره ليكون بمثابة درع حماية متكامل
+        للهواتف المحمولة. يجمع النظام بين واجهات استخدام حديثة وأدوات أمن سيبراني احترافية، مع دمج لتقنيات الذكاء
+        الاصطناعي لتحليل التهديدات وتوجيه المستخدم بفعالية عالية.</p>
+
+    <h2 class="section-title">2. فكرة المشروع</h2>
+    <p>تتمحور فكرة المشروع حول توفير منصة محمولة تُمكّن المهتمين بالأمن السيبراني، والمستخدمين العاديين من فحص الأجهز
+ة
+        والشبكات والملفات واكتشاف الثغرات في بيئة آمنة وتفاعلية. يوفر التطبيق محاكاة بصرية جذابة تعتمد على فيزياء
+        الجاذبية، بالإضافة إلى أدوات فعلية للتحليل الشبكي وتحليل التطبيقات المثبتة وحماية الخصوصية.</p>
+
+    <h2 class="section-title">3. أهداف المشروع</h2>
+    <ul>
+        <li><strong>الهدف الرئيسي:</strong> حماية الجهاز المحلي وتحليل الشبكة بشكل استباقي عبر مجموعة أدوات أمنية
+            متكاملة في تطبيق واحد.</li>
+        <li><strong>الأهداف الفرعية:</strong>
+            <ul>
+                <li>اكتشاف التطبيقات الخبيثة والملفات المشبوهة التي قد تخترق خصوصية المستخدم.</li>
+                <li>تحليل الشبكات المفتوحة واكتشاف المنافذ والخدمات عبر Nmap.</li>
+                <li>الاستعانة بالذكاء الاصطناعي لتقديم استشارات فورية وموثوقة حول التهديدات المعقدة.</li>
+                <li>تبسيط المفاهيم الأمنية من خلال المحاكيات التفاعلية.</li>
+            </ul>
+        </li>
+    </ul>
+
+    <h2 class="section-title">4. المشكلة والحل</h2>
+    <p><strong>المشكلة:</strong> تتزايد التهديدات الموجهة للهواتف المحمولة بشكل ملحوظ (مثل التطبيقات الملغمة، شبكات
+        Wi-Fi غير الآمنة، والروابط الاحتيالية للتصيد)، في حين تفتقر غالبية أجهزة المستخدمين إلى أدوات فحص عميقة وسهلة
+        الاستخدام ومجمعة في مكان واحد يمكن الاعتماد عليها.</p>
+    <p><strong>الحل:</strong> يوفر <strong>Cyber Gravity Shield</strong> منصة شاملة تفحص التطبيقات المثبتة عبر أداة (App
+        Scanner)، وتحلل الشبكات عبر (Network Monitor)، وتفحص الروابط والملفات بدقة، مع إمكانية تقديم تقرير نهائي (PDF)
+        يوضح مستوى الأمان ويقترح حلولًا جذرية، كل هذا مدعوماً بمساعد ذكي (Gemini AI).</p>
+
+    <h2 class="section-title">5. التقنيات المستخدمة</h2>
+    <p>تم بناء المشروع باحترافية باستخدام التقنيات التالية استناداً إلى بنيته الفعلية:</p>
+    <ul>
+        <li><strong>لغة البرمجة:</strong> Dart</li>
+        <li><strong>إطار العمل:</strong> Flutter (لبناء واجهات سلسة ومتجاوبة عبر الأنظمة).</li>
+        <li><strong>الخدمات السحابية وقواعد البيانات:</strong> Firebase (للمصادقة Authentication وقاعدة بيانات Cloud
+            Firestore)، و SQLite (للتخزين المحلي الآمن للسجلات Offline).</li>
+        <li><strong>الذكاء الاصطناعي:</strong> Google Gemini API (للتفاعل وتقديم الاستشارات).</li>
+        <li><strong>الواجهات التفاعلية والرسومية:</strong> Flame & Forge2D (لمحرك الجاذبية الفيزيائية)، Syncfusion
+            Flutter Charts (للمخططات البيانية وعرض نسبة التقييم).</li>
+        <li><strong>إدارة الحالة:</strong> Riverpod (لضمان كفاءة تحديث الواجهات بدون استهلاك الموارد).</li>
+        <li><strong>أدوات الفحص والشبكة:</strong> Nmap محاكي/مدمج، Dio للطلبات الشبكية، حزم الشبكة (network_info_plus,
+            dart_ping, wifi_scan).</li>
+        <li><strong>أدوات التشفير:</strong> encrypt و crypto (للتشفير والتحقق من التواقيع وحساب MD5/SHA256).</li>
+        <li><strong>توليد التقارير:</strong> حزم pdf و printing لإنشاء التقارير النهائية وتصديرها.</li>
+    </ul>
+
+    <h2 class="section-title">6. شرح واجهات النظام</h2>
+    <div class="note">ملاحظة: بناءً على عدم توفر صور المرفقات، تم إعداد الشرح التفصيلي لجميع واجهات ومكونات النظام بناءً
+        على التحليل المباشر والمعمق للكود المصدري للمشروع.</div>
+
+    <h3>1️⃣ شاشة الترحيب (Splash Screen)</h3>
+    <ul>
+        <li><strong>الهدف:</strong> تهيئة بيئة التطبيق الجذابة والتحقق من حالة تسجيل الدخول.</li>
+        <li><strong>المكونات:</strong> شعار متحرك، نصوص نيون مستقبلية مع مؤثرات مستوحاة من أسلوب (Matrix).</li>
+        <li><strong>آلية العمل:</strong> بمجرد الفتح، يقوم النظام بتهيئة Firebase والتحقق مما إذا كان هناك جلسة نشطة
+            لتوجيه المستخدم.</li>
+    </ul>
+
+    <h3>2️⃣ شاشة تسجيل الدخول والتوثيق (Auth Screens)</h3>
+    <ul>
+        <li><strong>الهدف:</strong> توثيق وصول المستخدم للحفاظ على أمان التقارير والبيانات الخاصة والوصول السحابي.</li>
+        <li><strong>المكونات:</strong> حقول البريد الإلكتروني وكلمة المرور المشفرة، أزرار تسجيل الدخول، وإنشاء حساب
+            جديد.</li>
+    </ul>
+
+    <h3>3️⃣ شاشة المحاكيات (Simulations Screen)</h3>
+    <ul>
+        <li><strong>الهدف:</strong> الجانب التعليمي وتوعية المستخدم بكيفية عمل الهجمات السيبرانية المعقدة.</li>
+        <li><strong>المكونات:</strong> قائمة ب
+الهجمات الشهيرة مثل (SQLi, XSS, DDoS).</li>
+        <li><strong>آلية العمل:</strong> عرض تفاعلي للتهديد لتوضيح آلية حدوث الاختراق وطرق الوقاية منه.</li>
+    </ul>
+
+    <h3>4️⃣ شاشة المساعد الذكي (AI Chatbot Screen)</h3>
+    <ul>
+        <li><strong>الهدف:</strong> الاستعانة بالذكاء الاصطناعي لتحليل التهديدات.</li>
+        <li><strong>المكونات:</strong> واجهة محادثة مشابهة لتطبيقات المراسلة.</li>
+        <li><strong>آلية العمل:</strong> إرسال استفسار المستخدم عبر Gemini API وعرض الردود التوجيهية حول أفضل ممارسات
+            الحماية.</li>
+    </ul>
+
+    <h2 class="section-title">7. شرح كل مخرج (Outputs)</h2>
+
+    <h3>🛡️ نتيجة فحص الملفات والتطبيقات (File & APK Analysis)</h3>
+    <ul>
+        <li><strong>الوصف:</strong> تقرير يوضح حالة الملف والتصريحات التي يطلبها التطبيق (صلاحيات خطرة مثل الوصول
+            للكاميرا والميكروفون والموقع).</li>
+        <li><strong>كيف تم الحصول عليه:</strong> يتم تحليل توقيع الملف وقراءة ملف <code>AndroidManifest.xml</code>
+            محليًا وحساب هاش (SHA-256).</li>
+        <li><strong>الفائدة الأمنية:</strong> تحذير المستخدم من التطبيقات (Spyware) التي تطلب صلاحيات لا تتناسب مع
+            وظيفتها الأساسية.</li>
+    </ul>
+
+    <h3>📊 نسبة الأمان (Security Score)</h3>
+    <ul>
+        <li><strong>الوصف:</strong> تقييم رقمي من 0 إلى 100 يعبر عن السلامة الإجمالية للجهاز.</li>
+        <li><strong>كيف تم الحصول عليه:</strong> يُحسب تلقائياً في الخلفية بناءً على حالة الـ Root، نسبة استهلاك
+            الموارد، وجود الـ VPN، وعدد التهديدات المكتشفة في سجل النظام.</li>
+    </ul>
+
+    <h2 class="section-title">8. شرح أدوات الأمن السيبراني</h2>
+
+    <h3>🔍 Nmap Scanner (فاحص المنافذ)</h3>
+    <ul>
+        <li><strong>الوظيفة:</strong> مسح المنافذ المفتوحة والخدمات العاملة على أجهزة الشبكة.</li>
+        <li><strong>آلية العمل:</strong> إدخال عنوان IP فيقوم التطبيق بإرسال طلبات فحص متزامنة.</li>
+        <li><strong>الأهمية:</strong> كشف الثغرات ونقاط الدخول غير المحمية التي قد تُستغل لاختراق الخادم.</li>
+    </ul>
+
+    <h3>🌍 WHOIS Lookup</h3>
+    <ul>
+        <li><strong>الوظيفة:</strong> الاستعلام عن بيانات مسجلي ومُلاك النطاقات (Domains) للتحقق من مصداقية المواقع
+            وتجنب الاحتيال.</li>
+    </ul>
+
+    <h3>🛰️ Reverse DNS و GeoIP Tracker</h3>
+    <ul>
+        <li><strong>الوظيفة:</strong> تحويل عنوان IP إلى اسم نطاق، وتحديد الموقع الجغرافي الدقيق ومزود الخدمة (ISP)
+            المرتبط بالعنوان، وتُستخدم هذه الأداة لتتبع مصدر الهجمات.</li>
+    </ul>
+
+    <h3>🔐 SSL/TLS Analyzer</h3>
+    <ul>
+        <li><strong>الوظيفة:</strong> تحليل شهادة الأمان للمواقع والتأكد من قوة تشفيرها لضمان عدم تعرض المستخدم لهجمات
+            اعتراض البيانات (Man-in-The-Middle).</li>
+    </ul>
+
+    <h3>📡 Network Monitor</h3>
+    <ul>
+        <li><strong>الوظيفة:</strong> مراقبة مستمرة لتدفق البيانات (Upload/Download Speed)، واستخراج تفاصيل بروتوكولات
+            الإنترنت.</li>
+    </ul>
+
+    <h2 class="section-title">9. شرح لوحة التحكم (Dashboard)</h2>
+    <p>واجهة الـ Dashboard هي مركز القيادة والتحكم، وتحتوي العناصر التالية المستخرجة من الكود الأساسي
+        <code>dashboard_screen.dart</code>:
+    </p>
+    <ul>
+        <li><strong>Security Posture Ratio:</strong> تعرض كمخطط كعكة دائري (Doughnut Chart)، تعكس نسبة الأمان.</li>
+        <li><strong>Threat Level:</strong> مؤشر مستوى التهديد (High / Low).</li>
+        <li><strong>Warnings & Rogue Files:</strong> عدادات للتحذيرات والملفات المشبوهة.</li>
+        <li><strong>CPU Load & RAM Allocation:</strong> مؤشرات استهلاك موارد المعالج والذاكرة الحالية لرصد أي استهلاك
+            غير طبيعي يعود لبرمجيات خبيثة تعمل بالخفاء.</li>
+        <li><strong>Root Status & VPN Shield:</strong> عرض حالة كسر الحماية (Vulnerable أو Secure) ومراقبة درع الـ VPN
+            للحفاظ على التخفي.</li>
+        <li><strong>الدفتر الزمني (Chronological Ledger):</strong> نافذة على شكل طرفية (Terminal) تعرض أحدث أحداث وسجلات
+            النظام لحظة بلحظة.</li>
+    </ul>
+
+    <h2 class="section-title">10. شرح الإعدادات (Settings)</h2>
+    <ul>
+        <li><strong>General Settings (الإعدادات العامة):</strong> التحكم في مظهر التطبيق (Dark Mode) واللغة.</li>
+        <li><strong>Gemini API Settings:</strong> إدخال المفتاح السري (API Key) للذكاء الاصطناعي وتفعيل وضع التصحيح.
+        </li>
+        <li><strong>Security & Network Settings:</strong> خيارات تخصيص حساسية أدوات فحص الشبكة وتنبيهات الخلفية الدورية.
+        </li>
+        <li><strong>PDF Report Settings:</strong> تخصيص إعدادات استخراج التقرير الأمني (تضمين اسم المؤسسة، شعار التقرير
+            وغيرها).</li>
+    </ul>
+
+    <h2 class="section-title">11. شرح البنية البرمجية (Architecture)</h2>
+    <p>يعتمد المشروع على بنية <strong>Clean Architecture</strong> لفصل المسؤوليات:</p>
+    <ul>
+        <li><strong>lib/core/:</strong> الإعدادات العامة وتنسيقات التطبيق والأدوات المساعدة (Utilities).</li>
+        <li><strong>lib/data/:</strong> طبقة البيانات المحتوية على <code>Providers</code> والتي تدير حالة التطبيق
+            المركزية باستخدام Riverpod.</li>
+        <li><strong>lib/presentation/:</strong> طبقة الواجهات (UI) مقسمة بشكل منطقي لكل أداة وميزة.</li>
+        <li><strong>lib/services/:</strong> طبقة الخدمات للتواصل مع قواعد البيانات والـ APIs وتمرير دوال النظام (Method
+            Channels).</li>
+    </ul>
+    <p><strong>العلاقة (Data Flow):</strong> UI ➔ Provider ➔ Service ➔ API/Database ➔ Result ➔ UI.</p>
+
+    <h2 class="section-title">12. شرح قاعدة البيانات (SQLite)</h2>
+    <p>استخدم المشروع <strong>SQLite</strong> كقاعدة بيانات محلية رئيسية لعدة أسباب:</p>
+    <ul>
+        <li><strong>السبب:</strong> لتوفير أداء فائق وتخزين آمن Offline للسجلات وتاريخ الفحوصات دون مشاركتها سحابياً
+            لضمان الخصوصية.</li>
+        <li><strong>البيانات المحفوظة:</strong> أنواع التهديدات، التواريخ، نتائج الفحوصات، ومستوى الخطورة.</li>
+        <li><strong>التعامل:</strong> تُحفظ السجلات وتُسترجع لعرضها في <code>security_logs_screen.dart</code> ويمكن
+            للمستخدم تصفير السجل متى شاء.</li>
+    </ul>
+
+    <h2 class="section-title">13. شرح Firebase و Gemini</h2>
+    <ul>
+        <li><strong>Firebase:</strong> يُستخدم لـ Authentication (لتأمين تسجيل الدخول) و Firestore (لحفظ تقارير الفحص
+            والنسخ الاحتياطي عبر السحابة باختيار المستخدم).</li>
+        <li><strong>Gemini API:</strong>
+            <ul>
+                <li>الاتصال يتم عبر حزمة <code>google_generative_ai</code> بإرسال النصوص (Prompts) واستقبال الرد.</li>
+                <li>يوجد وضع احتياطي (Fallback) في حال عدم توفر الإنترنت للرد بمجموعة محددة مسبقاً من الإجابات لتأمين
+                    النظام.</li>
+            </ul>
+        </li>
+    </ul>
+
+    <h2 class="section-title">14. نظام التقارير (PDF Reports)</h2>
+    <p>يعتبر نظام إنشاء التقارير من أقوى المخرجات الأكاديمية للتطبيق:</p>
+    <ul>
+        <li><strong>البيانات:</strong> يتم جمع نسبة الأمان، أحداث النظام المخترقة، نتائج فحص الشبكات والملفات ووضعها في
+            ملف PDF.</li>
+        <li><strong>الآلية:</strong> يتم استخدام حزمة <code>printing</code> لتشكيل مستند (Document) وعرض نافذة معاينة
+            (Preview) تتيح للمستخدم إما طباعة التقرير مباشرة أو مشاركته لجهات الاختصاص مرفقاً بالتوصيات.</li>
+    </ul>
+
+    <h2 class="section-title">15. مميزات المشروع</h2>
+    <table>
+        <tr>
+            <th>الميزة</th>
+            <th>وظيفتها</th>
+            <th>فائدتها الأمنية</th>
+        </tr>
+        <tr>
+            <td>لوحة القيادة الحية</td>
+            <td>عرض مؤشرات الاستهلاك والاتصال والتهديدات بأسلوب مرئي</td>
+            <td>توفير نظرة شاملة ولحظية لتقييم أمان بيئة الهاتف الذكي.</td>
+        </tr>
+        <tr>
+            <td>كشف الروت (Root Detection)</td>
+            <td>فحص وجود صلاحيات الجذر المعرضة للخطر</td>
+            <td>منع البرمجيات الخبيثة من استغلال الصلاحيات الفائقة لسرقة النظام.</td>
+        </tr>
+        <tr>
+            <td>فاحص المنافذ (Nmap)</td>
+            <td>استكشاف المنافذ والخدمات العاملة على الـ IPs</td>
+            <td>اكتشاف الثغرات والنقاط المفتوحة قبل أن يستغلها المهاجم الفعلي.</td>
+        </tr>
+        <tr>
+            <td>الذكاء الاصطناعي (Gemini)</td>
+            <td>تقديم استشارات وتوجيهات بناءً على الطلب والأحداث</td>
+            <td>تسهيل فهم التهديدات المعقدة واقتراح حلول فورية للمستخدم.</td>
+        </tr>
+        <tr>
+            <td>فاحص APK والتشفير</td>
+            <td>تحليل أذوناتالتطبيقات وتشفير النصوص وكلمات المرور</td>
+            <td>حماية المستخدم من برامج التجسس وحفظ البيانات الحساسة بأمان تام.</td>
+        </tr>
+    </table>
+
+    <h2 class="section-title">16. نقاط القوة والقيود</h2>
+    <h3>✅ نقاط القوة</h3>
+    <ul>
+        <li><strong>واجهة مستخدم احترافية:</strong> تصميم عصري يمزج بين الجماليات ووظائف الحماية الفعالة مع تأثيرات
+            فيزيائية نيون (Cyberpunk-style).</li>
+        <li><strong>تنوع الأدوات:</strong> جمع أدوات عديدة متفرقة (شبكات، ملفات، تشفير، DNS) في بيئة أندرويد واحدة
+            متكاملة (All-in-One).</li>
+        <li><strong>دمج الذكاء الاصطناعي:</strong> إدراج محرك توليدي قوي (Gemini) يضيف قيمة غير مسبوقة لتحليل المشكلات
+            بطريقة تفاعلية.</li>
+    </ul>
+
+    <h3>⚠️ القيود</h3>
+    <ul>
+        <li>الاعتماد على واجهات برمجة (APIs) خارجية في بعض الأدوات المتقدمة مثل Gemini يتطلب توفر اتصال إنترنت مستمر
+            لتقديم كافة الميزات بفعالية قصوى.</li>
+        <li>نظام تشغيل أندرويد يفرض قيوداً صارمة على فحص الشبكات منخفضة المستوى مما يمنع أدوات كـ Nmap من العمل بصلاحيات
+            الـ (Raw Sockets) المتاحة في أنظمة Linux.</li>
+    </ul>
+
+    <h3>🚀 التطوير المستقبلي</h3>
+    <ul>
+        <li>تطوير محرك فحص فيروسات محلي متكامل يعتمد على التحديثات الدورية لبصمات التهديدات (Signatures Update).</li>
+        <li>إضافة ميزة الفحص السحابي الجماعي للملفات المشبوهة (Cloud Sandbox) قبل تنفيذها على الجهاز.</li>
+    </ul>
+
+</body>
+
+</html>
